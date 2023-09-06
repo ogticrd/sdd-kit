@@ -1,19 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ButtonApp } from "../components/button";
+import { Loading } from "../components/loading";
 
 const meta = {
-  title: "Example/Button",
+  title: "Example/Loading",
   tags: ["autodocs"],
-  component: ButtonApp,
-} satisfies Meta<typeof ButtonApp>;
+  component: Loading,
+} satisfies Meta<typeof Loading>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
-  args: {
-    children: "Button",
-  },
+  args: {},
 };
