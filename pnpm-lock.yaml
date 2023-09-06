@@ -3125,7 +3125,7 @@ packages:
       '@storybook/preview-api': 7.4.0
       '@storybook/theming': 7.4.0(react-dom@18.2.0)(react@18.2.0)
       '@storybook/types': 7.4.0
-      '@types/lodash': 4.14.197
+      '@types/lodash': 4.14.198
       color-convert: 2.0.1
       dequal: 2.0.3
       lodash: 4.17.21
@@ -3203,7 +3203,7 @@ packages:
       magic-string: 0.30.3
       remark-external-links: 8.0.0
       remark-slug: 6.1.0
-      rollup: 3.28.1
+      rollup: 3.29.0
       typescript: 5.2.2
       vite: 4.4.9(less@4.2.0)
     transitivePeerDependencies:
@@ -3860,8 +3860,8 @@ packages:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
     dev: true
 
-  /@types/lodash@4.14.197:
-    resolution: {integrity: sha512-BMVOiWs0uNxHVlHBgzTIqJYmj+PgCo4euloGF+5m4okL3rEYzM2EEv78mw8zWSMM57dM7kVIgJ2QDvwHSoCI5g==}
+  /@types/lodash@4.14.198:
+    resolution: {integrity: sha512-trNJ/vtMZYMLhfN45uLq4ShQSw0/S7xCTLLVM+WM1rmFpba/VS42jVUgaO3w/NOLiWR/09lnYk0yMaA/atdIsg==}
     dev: true
 
   /@types/mdx@2.0.7:
@@ -7859,8 +7859,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup@3.28.1:
-    resolution: {integrity: sha512-R9OMQmIHJm9znrU3m3cpE8uhN0fGdXiawME7aZIpQqvpS/85+Vt1Hq1/yVIcYfOmaQiHjvXkQAoJukvLpau6Yw==}
+  /rollup@3.29.0:
+    resolution: {integrity: sha512-nszM8DINnx1vSS+TpbWKMkxem0CDWk3cSit/WWCBVs9/JZ1I/XLwOsiUglYuYReaeWWSsW9kge5zE5NZtf/a4w==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -8725,7 +8725,7 @@ packages:
       esbuild: 0.18.20
       less: 4.2.0
       postcss: 8.4.29
-      rollup: 3.28.1
+      rollup: 3.29.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
