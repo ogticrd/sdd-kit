@@ -7,11 +7,12 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ES2020",
+    "module": "ESNext",
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
     "declaration": true,
-    "declarationDir": "dist"
+    "declarationDir": "types",
+    "emitDeclarationOnly": true
   },
-  "include": ["stories"]
+  "exclude": ["stories"]
 }
