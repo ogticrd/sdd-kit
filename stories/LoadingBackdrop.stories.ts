@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import LoadingBackdrop from "../components/loadingBackdrop";
+import { LoadingBackdrop } from "../components/loadingBackdrop";
 
 const meta = {
   title: "Example/LoadingBackdrop",

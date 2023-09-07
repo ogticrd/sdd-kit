@@ -1,14 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Header } from "../components/header";
-
-import Logo from "./assets/logoGOB.png";
+import { GridContainer } from "../components/grid";
 
 const meta = {
-  title: "Example/Header",
+  title: "Example/GridContainer",
   tags: ["autodocs"],
-  component: Header,
-} satisfies Meta<typeof Header>;
+  component: GridContainer,
+} satisfies Meta<typeof GridContainer>;
 
 export default meta;
 
@@ -16,7 +14,6 @@ type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
   args: {
-    logo: Logo,
-    logoWidth: 150,
+    children: "Some text",
   },
 };
