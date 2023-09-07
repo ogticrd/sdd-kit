@@ -1,25 +1,7 @@
 import React from 'react'
-import Button from '@mui/material/Button';
+import MUIButton from '@mui/material/Button';
 
-interface IButtonTextApp {
-  onClick?: any;
-  children: React.ReactNode;
-}
-
-export const ButtonTextApp = ({ onClick, children }: IButtonTextApp) => {
-  return (
-    <Button
-      onClick={onClick}
-      variant="text"
-      size="small"
-      sx={{ textTransform: 'inherit' }}
-    >
-      {children}
-    </Button>
-  );
-};
-
-export interface IButtonApp {
+export interface IProps {
   disabled?: boolean;
   submit?: boolean;
   onClick?: () => void;
@@ -39,7 +21,7 @@ export interface IButtonApp {
   variant?: 'text' | 'outlined' | 'contained';
 }
 
-export const ButtonApp = ({
+export const Button = ({
   disabled,
   variant = 'contained',
   submit,
@@ -50,9 +32,9 @@ export const ButtonApp = ({
   startIcon = null,
   endIcon = null,
   color,
-}: IButtonApp) => {
+}: IProps) => {
   return (
-    <Button
+    <MUIButton
       size={size}
       variant={variant}
       disabled={disabled}
@@ -64,6 +46,6 @@ export const ButtonApp = ({
       endIcon={endIcon}
     >
       {children}
-    </Button>
+    </MUIButton>
   );
 };

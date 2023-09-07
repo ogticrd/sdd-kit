@@ -3,11 +3,11 @@ import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import { Typography } from '@mui/material';
 
-interface IProps {
+export interface IProps {
   text?: string;
 }
 
-export default function LoadingBackdrop({ text }: IProps) {
+export const LoadingBackdrop = ({ text }: IProps) => {
   const [open] = React.useState(true);
 
   return (

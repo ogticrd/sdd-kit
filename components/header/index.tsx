@@ -4,12 +4,12 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
 
-interface IHeader {
+export interface IProps {
   logo: any;
   logoWidth?: number;
 }
 
-export default function Header(props: IHeader) {
+export const Header = (props: IProps) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
