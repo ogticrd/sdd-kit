@@ -1,6 +1,3 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
-
 name: Node.js Package
 
 on:
@@ -18,8 +15,22 @@ jobs:
       - run: npm ci
       - run: npm test
 
-  publish-gpr:
+  build-lib:
     needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Build project with pnpm
+        run: pnpm rollup-build-lib
+
+  publish-gpr:
+    needs: build-lib
     runs-on: ubuntu-latest
     permissions:
       contents: read
