@@ -20,7 +20,7 @@ export default [
       },
     ],
     plugins: [
-      PeerDepsExternalPlugin(), //<--- THIS
+      PeerDepsExternalPlugin(),
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
