@@ -1,5 +1,6 @@
-import { createTheme } from "@mui/material/styles";
+import { ThemeProvider as MUIThemeProvider, createTheme } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
+import React from "react";
 
 export const theme = createTheme({
   palette: {
@@ -20,7 +21,7 @@ export const theme = createTheme({
   typography: {
     fontFamily: ["Poppins", "sans-serif"].join(","),
   },
-  
+
   components: {
     MuiInputLabel: {
       defaultProps: {
@@ -68,3 +69,11 @@ export const theme = createTheme({
     }
   },
 });
+
+export const ThemeProvider = ({ children }: any) => {
+  return (
+    <MUIThemeProvider theme={theme}>
+      {children}
+    </MUIThemeProvider>
+  );
+}

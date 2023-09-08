@@ -13,5 +13,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
-  args: {},
+  args: {
+    text: "This is an alert",
+  },
 };

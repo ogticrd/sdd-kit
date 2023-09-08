@@ -13,5 +13,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
-  args: {},
+  args: {
+    totalPages: 10,
+    onChange: (e, v) => {
+      console.log(e, v);
+    },
+  },
 };

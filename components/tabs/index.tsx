@@ -23,7 +23,7 @@ function CustomTabPanel(props: TabPanelProps) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          {children}
         </Box>
       )}
     </div>
@@ -37,7 +37,12 @@ function a11yProps(index: number) {
   };
 }
 
-export const Tabs = () => {
+export interface TabsProps {
+  titles: string[];
+  children: any[];
+}
+
+export const Tabs = ({ titles, children }: TabsProps) => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -48,20 +53,16 @@ export const Tabs = () => {
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <MUITabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          {titles.map((title, index) => (
+            <Tab label={title} {...a11yProps(index)} />
+          ))}
         </MUITabs>
       </Box>
-      <CustomTabPanel value={value} index={0}>
-        Item One
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
-        Item Two
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-        Item Three
-      </CustomTabPanel>
+      {children.map((child, index) => (
+        <CustomTabPanel value={value} index={index}>
+          {child}
+        </CustomTabPanel>
+      ))}
     </Box>
   );
 }
