@@ -1,3 +1,4 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Card } from "../components/card";
@@ -13,5 +14,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
-  args: {},
+  args: {
+    title: "Texto de Ejemplo",
+    subTitle: "Otro Texto de Ejemplo",
+    children: "",
+  },
 };

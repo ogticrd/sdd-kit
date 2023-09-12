@@ -3,7 +3,7 @@ import MUIAlert from '@mui/material/Alert';
 import { AlertTitle } from '@mui/material';
 
 export interface IProps {
-  severity: 'info' | 'success' | 'warning' | 'error'
+  severity?: 'info' | 'success' | 'warning' | 'error'
   variant?: 'filled' | 'outlined' | 'standard';
   text: string;
   title?: string;
