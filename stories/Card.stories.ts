@@ -1,7 +1,7 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Card } from "../components/card";
-import React from "react";
 import { Button } from "../components/button";
 
 const meta = {
@@ -24,7 +24,8 @@ const actions = [Button.call(null, { children: "Action 1" })];
 
 export const playground: Story = {
   args: {
-    content,
-    actions,
+    title: "Texto de Ejemplo",
+    subTitle: "Otro Texto de Ejemplo",
+    children: "",
   },
 };

@@ -1,25 +1,31 @@
 import * as React from 'react';
 import MUICard from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import { theme } from '../../theme';
 
-
-export interface CardProps {
-  content?: React.ReactNode;
-  actions?: React.ReactNode[];
+export interface IProps {
+  title?: string;
+  subTitle?: string;
+  children?: any;
 }
 
-export const Card = ({
-  content, actions
-}: CardProps) => {
+export const Card = ({ title, subTitle, children }: IProps) => {
   return (
-    <MUICard sx={{ minWidth: 275 }}>
+    <MUICard sx={{ minWidth: 275 }} elevation={0}>
       <CardContent>
-        {content}
+        {title &&
+          <Typography variant="h5" component="div" color={theme.palette.primary.main} fontWeight="bold" gutterBottom>
+            {title}
+          </Typography>
+        }
+        {subTitle &&
+          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            {subTitle}
+          </Typography>
+        }
+        {children}
       </CardContent>
-      <CardActions>
-        {actions}
-      </CardActions>
     </MUICard>
   );
 }

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import MUIPagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
 
 
 export interface IProps {
-  currentPage: number
+  color?: 'primary' | 'secondary' | 'standard';
+  currentPage: number;
   totalPages: number;
   shape?: 'rounded' | 'circular';
   variant?: 'text' | 'outlined';
@@ -12,6 +12,7 @@ export interface IProps {
 }
 
 export const Pagination = ({
+  color = 'primary',
   totalPages,
   onChange,
   shape = 'rounded',
@@ -26,7 +27,6 @@ export const Pagination = ({
   };
 
   return (
-    <MUIPagination count={totalPages} variant={variant} shape={shape} page={currentPage} onChange={onChangePage} />
-
+    <MUIPagination color={color} count={totalPages} variant={variant} shape={shape} page={currentPage} onChange={onChangePage} />
   );
 }

@@ -14,7 +14,9 @@ type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
   args: {
+    color: "primary",
     totalPages: 10,
+    currentPage: 1,
     onChange: (e, v) => {
       console.log(e, v);
     },

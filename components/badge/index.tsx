@@ -2,11 +2,22 @@ import * as React from 'react';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
-export const Badge = () => {
+export interface IProps {
+  color?: 'info' | 'success' | 'warning' | 'error' | 'primary'
+  variant?: 'outlined' | 'filled';
+  size?: 'small' | 'medium'
+  label: string;
+}
+
+export const Badge = ({
+  color = 'info',
+  variant = 'outlined',
+  size = 'medium',
+  label
+}: IProps) => {
   return (
     <Stack direction="row" spacing={1}>
-      <Chip label="Chip Filled" />
-      <Chip label="Chip Outlined" variant="outlined" />
+      <Chip label={label} variant={variant} size={size} color={color} />
     </Stack>
   );
 }
