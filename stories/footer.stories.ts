@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
   args: {
-    logoDEV: logoOGTIC,
-    logoDO: logoGOB,
+    logoDEV: logoOGTIC.src,
+    logoDO: logoGOB.src,
   },
 };
