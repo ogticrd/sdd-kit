@@ -23,6 +23,14 @@ export const theme = createTheme({
   },
 
   components: {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderTop: "4px solid red",
+          boxShadow: "0px 3px 6px #f3f3f3"
+        }
+      }
+    },
     MuiInputLabel: {
       defaultProps: {
         sx: {
@@ -49,15 +57,15 @@ export const theme = createTheme({
         },
       },
     },
-    MuiTextField: {
-      defaultProps: {
-        sx: {
-          '& .MuiInputBase-root': {
-            background: '#F8F8F8',
-          },
-        }
-      }
-    },
+    // MuiTextField: {
+    //   defaultProps: {
+    //     sx: {
+    //       '& .MuiInputBase-root': {
+    //         background: '#F8F8F8',
+    //       },
+    //     }
+    //   }
+    // },
     MuiStepIcon: {
       styleOverrides: {
         root: {
