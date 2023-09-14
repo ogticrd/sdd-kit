@@ -12,12 +12,12 @@ import { GridContainer, GridItem } from "../grid";
 
 import { theme } from "../../theme";
 
-export interface IProps {
+export interface IFooterProps {
   logoDO: any;
   logoDEV: any;
 }
 
-export const Footer = ({ logoDO, logoDEV }: IProps) => {
+export const Footer = ({ logoDO, logoDEV }: IFooterProps) => {
   return (
     <>
       <Box style={{ padding: "75px 25px", background: theme.palette.primary.main }}>

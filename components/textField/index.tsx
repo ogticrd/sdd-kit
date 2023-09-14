@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import MUITextField from '@mui/material/TextField';
 
-export interface IProps {
+export interface ITextFieldProps {
   id: string;
   label?: string
   variant: 'outlined' | 'filled' | 'standard';
@@ -10,7 +10,7 @@ export interface IProps {
   args?: object
 }
 
-export const TextField = ({ id, label, variant = 'outlined', color, args = {} }: IProps) => {
+export const TextField = ({ id, label, variant = 'outlined', color, args = {} }: ITextFieldProps) => {
   console.log(args);
   return (
     <MUITextField
