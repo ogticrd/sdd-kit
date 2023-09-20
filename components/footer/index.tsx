@@ -1,25 +1,19 @@
 import * as React from 'react';
+
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import TwitterIcon from "@mui/icons-material/Twitter";
+
 import { Box, IconButton, Typography } from "@mui/material";
 
 import { GridContainer, GridItem } from "../grid";
-// import logoOGTIC from "../../stories/assets/logoOGTIC.png";
-// import logoGOB from "../../stories/assets/logoGOB.png";
-// import DivGrow from "../elements/divGrow";
 
 import { theme } from "../../theme";
 
-export interface IProps {
-  logoDO: any;
-  logoDEV: any;
-}
-
-export const Footer = ({ logoDO, logoDEV }: IProps) => {
+export const Footer = () => {
   return (
-    <>
+    <div>
       <Box style={{ padding: "75px 25px", background: theme.palette.primary.main }}>
         <div
           style={{
@@ -32,7 +26,7 @@ export const Footer = ({ logoDO, logoDEV }: IProps) => {
           <GridContainer spacing={4}>
             <GridItem md={12} lg={3}>
               <div style={{ display: "flex" }}>
-                <img src={logoDO} alt="logo" width="241" height="90" />
+                <img src="https://b2368105.smushcdn.com/2368105/wp-content/uploads/2021/06/logo.png?lossy=0&strip=1&webp=1" alt="logo" width="241" height="90" />
               </div>
             </GridItem>
             <GridItem md={12} lg={9}>
@@ -109,7 +103,7 @@ export const Footer = ({ logoDO, logoDEV }: IProps) => {
                 </Typography>
                 <img
                   style={{ marginBottom: "-10px", marginLeft: "5px", cursor: "pointer" }}
-                  src={logoDEV}
+                  src="https://b2368105.smushcdn.com/2368105/wp-content/uploads/2021/06/logo.png?lossy=0&strip=1&webp=1"
                   alt="logo ogtic"
                   width="55"
                   height="29"
@@ -151,6 +145,6 @@ export const Footer = ({ logoDO, logoDEV }: IProps) => {
           </GridContainer>
         </div>
       </div>
-    </>
+    </div>
   );
 }
