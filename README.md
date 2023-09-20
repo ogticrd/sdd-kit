@@ -1,8 +1,8 @@
-# Sistema de Diseño Dominicano
+# Librería de componentes
 
 ## Descripción y contexto
 
-Un sistema unificado y pensado para los usuarios. Una guía de diseño central para trabajar de forma más rápida y fluida con componentes reconocibles y fáciles de utilizar.
+Una poderosa librería de React diseñada para simplificar y mejorar el desarrollo de aplicaciones web modernas. Ofreciendo una amplia gama de componentes, esta librería te ayuda a acelerar tu proceso de desarrollo y crear interfaces de usuario atractivas y funcionales de manera eficiente.
 
 ## Guía de instalación
 

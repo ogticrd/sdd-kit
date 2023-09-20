@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Footer } from "../components/footer";
+import { Progress } from "../components/progress";
 
 const meta = {
-  title: "Example/Footer",
-  // tags: ["autodocs"],
-  component: Footer,
-} satisfies Meta<typeof Footer>;
+  title: "Example/Progress",
+  tags: ["autodocs"],
+  component: Progress,
+} satisfies Meta<typeof Progress>;
 
 export default meta;
 

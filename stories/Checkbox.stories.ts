@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Footer } from "../components/footer";
+import { Checkbox } from "../components/checkbox";
 
 const meta = {
-  title: "Example/Footer",
-  // tags: ["autodocs"],
-  component: Footer,
-} satisfies Meta<typeof Footer>;
+  title: "Example/Checkbox",
+  tags: ["autodocs"],
+  component: Checkbox,
+} satisfies Meta<typeof Checkbox>;
 
 export default meta;
 

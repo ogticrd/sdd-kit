@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Footer } from "../components/footer";
+import { Accordion } from "../components/accordion";
 
 const meta = {
-  title: "Example/Footer",
-  // tags: ["autodocs"],
-  component: Footer,
-} satisfies Meta<typeof Footer>;
+  title: "Example/Accordion",
+  tags: ["autodocs"],
+  component: Accordion,
+} satisfies Meta<typeof Accordion>;
 
 export default meta;
 

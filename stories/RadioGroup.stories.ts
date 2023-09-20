@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Footer } from "../components/footer";
+import { RadioGroup } from "../components/radioGroup";
 
 const meta = {
-  title: "Example/Footer",
-  // tags: ["autodocs"],
-  component: Footer,
-} satisfies Meta<typeof Footer>;
+  title: "Example/RadioGroup",
+  tags: ["autodocs"],
+  component: RadioGroup,
+} satisfies Meta<typeof RadioGroup>;
 
 export default meta;
 
