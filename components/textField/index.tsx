@@ -3,7 +3,7 @@ import MUITextField from '@mui/material/TextField';
 import { FormHelperText } from '@mui/material';
 import { theme } from '../../theme';
 
-export interface IProps {
+export interface ITextFieldProps {
   id: string;
   label?: string
   variant: 'outlined' | 'filled' | 'standard';
@@ -13,7 +13,7 @@ export interface IProps {
   args?: object
 }
 
-export const TextField = ({ id, label, variant = 'outlined', color, error = false, helperText, args = {} }: IProps) => {
+export const TextField = ({ id, label, variant = 'outlined', color, error = false, helperText, args = {} }: ITextFieldProps) => {
   console.log(args);
   return (
     <>

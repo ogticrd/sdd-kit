@@ -4,13 +4,13 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { theme } from '../../theme';
 
-export interface IProps {
+export interface ICardProps {
   title?: string;
   subTitle?: string;
   children?: any;
 }
 
-export const Card = ({ title, subTitle, children }: IProps) => {
+export const Card = ({ title, subTitle, children }: ICardProps) => {
   return (
     <MUICard sx={{ minWidth: 275 }} elevation={0}>
       <CardContent>

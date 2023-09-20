@@ -3,11 +3,11 @@ import SearchIcon from '@mui/icons-material/Search';
 
 import React, { useEffect } from 'react'
 
-export interface IProps {
+export interface ISearchBoxProps {
     onSearch: (value: string) => void;
 }
 
-export default function SearchBox({ onSearch }: IProps) {
+export default function SearchBox({ onSearch }: ISearchBoxProps) {
 
     const [searchValue, setSearchValue] = React.useState('');
 
