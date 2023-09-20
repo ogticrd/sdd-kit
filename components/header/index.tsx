@@ -1,34 +1,58 @@
 import React from 'react'
 import AppsIcon from '@mui/icons-material/Apps';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Box from '@mui/material/Box';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import { IconButton, Link } from '@mui/material';
+import SearchBox from '../searchbox';
+import HeaderMenu from './menu';
 
+export interface IMenuItem {
+  name: string;
+  path: string;
+  external?: boolean;
+  children?: IMenuItem[];
+}
 export interface IProps {
   logo: any;
-  logoWidth?: number;
+  dark?: boolean;
+  menuItems: IMenuItem[];
+  searchBox?: { onSeach: (value: string) => void };
+  customElements?: React.ReactNode[];
 }
 
-export const Header = (props: IProps) => {
+export const Header = ({ logo, dark, menuItems, searchBox, customElements }: IProps) => {
+
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <div style={{ width: '100%', maxWidth: '1400px', margin: 'auto' }}>
-          <Toolbar sx={{ padding: '0px', height: '72px' }}>
-            <div style={{ flexGrow: 1, paddingTop: '8px' }}>
-              <a
-                href={
-                  '/'
-                }
-                style={{ color: 'white' }}
-              >
-                <img src={props.logo} alt="logo" width={props.logoWidth ? props.logoWidth : 200} />
-              </a>
-            </div>
-            <AppsIcon fontSize="large" />
-          </Toolbar>
-        </div>
-      </AppBar>
-    </Box>
+    <header className={`${dark ? 'bg-blue-900' : 'bg-white'}`}>
+      <div className='container mx-auto flex items-center justify-between px-4'>
+        <img src={logo} alt='logo' className='w-28' />
+        <span className='flex items-center gap-4'>
+          {searchBox && <SearchBox onSearch={searchBox.onSeach} />}
+          {searchBox && <div className='h-12 border-l border-gray-300'></div>}
+          <AppsIcon fontSize='large' htmlColor={dark ? '#fff' : 'rgb(30 58 138)'} />
+          {customElements?.length && customElements.map((element, index) =>
+            <>
+              <div className='h-12 border-l border-gray-300'></div>
+              <div key={index}>{element}</div>
+            </>
+          )
+
+          }
+          <span className='flex items-center md:hidden '>
+
+            <div className='h-12 border-l border-gray-300'></div>
+            <IconButton onClick={() => setIsMenuOpen(!isMenuOpen)} color='primary' >
+              {isMenuOpen ? <CloseIcon fontSize='large' /> : <MenuIcon fontSize='large' />}
+            </IconButton>
+          </span>
+        </span>
+      </div>
+      {menuItems?.length &&
+        <HeaderMenu menuItems={menuItems} isMenuOpen={isMenuOpen} />
+      }
+    </header>
   );
 }
