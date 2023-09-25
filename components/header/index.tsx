@@ -5,7 +5,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import { IconButton, Link } from '@mui/material';
 import SearchBox from '../searchbox';
 import HeaderMenu from './menu';
-import LinksOfInterest from '../links-of-interest';
 
 export interface IMenuItem {
   name: string;
@@ -33,7 +32,7 @@ export const Header = ({ logo, dark, menuItems, searchBox, customElements }: IHe
         <span className='flex items-center gap-4'>
           {searchBox && <SearchBox onSearch={searchBox.onSeach} />}
           {searchBox && <div className='h-12 border-l border-gray-300'></div>}
-          <LinksOfInterest dark={dark} />
+          <AppsIcon fontSize='large' htmlColor={dark ? '#fff' : 'rgb(30 58 138)'} />
           {customElements?.length && customElements.map((element, index) =>
             <>
               <div className='h-12 border-l border-gray-300'></div>

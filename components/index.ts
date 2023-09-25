@@ -13,4 +13,3 @@ export * from "./stepper";
 export * from "./tabs";
 export * from "./textField";
 export * from "./typography";
-export * from "./links-of-interest";
