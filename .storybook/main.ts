@@ -1,4 +1,4 @@
-import type { StorybookConfig } from "@storybook/nextjs";
+import type { StorybookConfig } from "@storybook/react-vite";
 
 const config: StorybookConfig = {
   stories: [
@@ -12,15 +12,15 @@ const config: StorybookConfig = {
     "@storybook/addon-interactions",
     {
       name: "@storybook/addon-styling",
-      options: {
-        postCss: {
-          implementation: require.resolve("postcss"),
-        },
-      },
+      options: {},
+    },
+    {
+      name: "@storybook/addon-styling",
+      options: {},
     },
   ],
   framework: {
-    name: "@storybook/nextjs",
+    name: "@storybook/react-vite",
     options: {},
   },
   docs: {

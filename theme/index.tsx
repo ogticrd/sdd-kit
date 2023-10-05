@@ -2,6 +2,8 @@ import { ThemeProvider as MUIThemeProvider, createTheme } from "@mui/material/st
 import { red } from "@mui/material/colors";
 import React from "react";
 
+import "./index.css";
+
 export const theme = createTheme({
   palette: {
     primary: {

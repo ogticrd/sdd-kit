@@ -1,32 +1,18 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es2016",
     "outDir": "dist",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": ["./*"]
-    },
+    "module": "ESNext",
     "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node",
     "declaration": true,
-    "declarationDir": "types"
+    "declarationDir": "types",
+    "emitDeclarationOnly": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "stories"]
+  "exclude": ["stories"]
 }

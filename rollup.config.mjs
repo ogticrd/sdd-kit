@@ -5,8 +5,9 @@ import dts from "rollup-plugin-dts";
 
 import packageJson from "./package.json" assert { type: "json" };
 import PeerDepsExternalPlugin from "rollup-plugin-peer-deps-external";
+import postcss from "rollup-plugin-postcss";
 
-export default [
+const config = [
   {
     input: "index.ts",
     output: [
@@ -24,11 +25,20 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
+      postcss({
+        plugins: [],
+        sourceMap: true,
+        extract: true,
+        minimize: true,
+      }),
     ],
   },
   {
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
+    external: [/\.css$/],
   },
 ];
+
+export default config;
