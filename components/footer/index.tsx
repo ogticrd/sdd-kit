@@ -125,11 +125,10 @@ export const Footer = ({ children }: IPropsFooter) => {
                 Desarrollado por
               </Typography>
               <img
-                style={{ marginBottom: "10px", marginLeft: "5px", cursor: "pointer" }}
+                style={{ marginLeft: "5px", cursor: "pointer" }}
                 src="https://b2368105.smushcdn.com/2368105/wp-content/uploads/2021/06/logo.png?lossy=0&strip=1&webp=1"
                 alt="logo ogtic"
                 width="55"
-                height="29"
                 onClick={() => window.open("https://ogtic.gob.do/")}
               />
             </div>
