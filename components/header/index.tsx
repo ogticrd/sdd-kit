@@ -5,6 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { IconButton, Link } from '@mui/material';
 import SearchBox from '../searchbox';
 import HeaderMenu from './menu';
+import LinksOfInterest from '../links-of-interest';
 
 export interface IMenuItem {
   name: string;
@@ -12,7 +13,7 @@ export interface IMenuItem {
   external?: boolean;
   children?: IMenuItem[];
 }
-export interface IProps {
+export interface IHeaderProps {
   logo: any;
   dark?: boolean;
   menuItems: IMenuItem[];
@@ -20,7 +21,7 @@ export interface IProps {
   customElements?: React.ReactNode[];
 }
 
-export const Header = ({ logo, dark, menuItems, searchBox, customElements }: IProps) => {
+export const Header = ({ logo, dark, menuItems, searchBox, customElements }: IHeaderProps) => {
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -32,7 +33,7 @@ export const Header = ({ logo, dark, menuItems, searchBox, customElements }: IPr
         <span className='flex items-center gap-4'>
           {searchBox && <SearchBox onSearch={searchBox.onSeach} />}
           {searchBox && <div className='h-12 border-l border-gray-300'></div>}
-          <AppsIcon fontSize='large' htmlColor={dark ? '#fff' : 'rgb(30 58 138)'} />
+          <LinksOfInterest dark={dark} />
           {customElements?.length && customElements.map((element, index) =>
             <>
               <div className='h-12 border-l border-gray-300'></div>
