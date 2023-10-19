@@ -58,6 +58,7 @@
     "eslint-plugin-storybook": "^0.6.13",
     "rollup": "^3.29.0",
     "rollup-plugin-dts": "^6.0.1",
+    "rollup-plugin-image-files": "^1.4.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "storybook": "7.4.1",
     "tslib": "^2.6.2"

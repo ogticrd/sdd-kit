@@ -2,6 +2,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
+import images from "rollup-plugin-image-files";
 
 import packageJson from "./package.json" assert { type: "json" };
 import PeerDepsExternalPlugin from "rollup-plugin-peer-deps-external";
@@ -24,6 +25,7 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
+      images(),
     ],
   },
   {
