@@ -13,5 +13,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
-  args: {},
+  args: {
+    checked: true,
+    onChange: (v) => {
+      console.log(v);
+    },
+  },
 };
