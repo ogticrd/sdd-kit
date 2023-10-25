@@ -3,12 +3,12 @@ import MUIContainer from '@mui/material/Container';
 
 export interface IPropsContainer {
   children: React.ReactNode;
-  maxWidth?: 'xs' | 'sm' | 'md' | 'lg'
+  maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 }
 
 export const Container = ({
   children,
-  maxWidth,
+  maxWidth = 'lg',
 }: IPropsContainer) => {
 
   return (

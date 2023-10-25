@@ -19,7 +19,33 @@ export const theme = createTheme({
   },
 
   typography: {
-    fontFamily: ["Poppins", "sans-serif"].join(","),
+    fontFamily: ['Poppins', 'sans-serif'].join(','),
+    h1: {
+      fontWeight: '600',
+      fontSize: '60px',
+      lineHeight: '80px',
+      color: '#003876',
+    },
+    h2: {
+      fontWeight: '500',
+      fontSize: '60px',
+      lineHeight: '90px',
+      color: '#000000',
+    },
+    body1: {
+      fontSize: '16px',
+      color: '#433E3E',
+      fontWeight: '400',
+    },
+    body2: {
+      fontSize: '16px',
+      color: '#000000',
+      fontWeight: '400',
+    },
+    subtitle2: {
+      fontWeight: '600',
+      fontSize: '32px',
+    },
   },
 
   components: {

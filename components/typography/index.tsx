@@ -1,16 +1,25 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import MUITypography from "@mui/material/Typography";
 
-export interface ITypographyProps {
+export interface IPropsTypography {
   children: React.ReactNode;
   variant?: 'body1' | 'body2' | 'button' | 'caption' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'inherit' | 'overline' | 'subtitle1' | 'subtitle2';
   gutterBottom?: boolean;
+  fontWeight?: number | string;
+  fontSize?: number | string;
+  color?: string
 }
 
-export const TypographyApp = ({ children, variant, gutterBottom }: ITypographyProps) => {
+export const Typography = ({ children, variant, gutterBottom, fontWeight, fontSize, color }: IPropsTypography) => {
   return (
-    <Typography variant={variant ? variant : "body1"} gutterBottom={gutterBottom}>
+    <MUITypography
+      variant={variant ? variant : "body1"}
+      gutterBottom={gutterBottom}
+      fontWeight={fontWeight}
+      fontSize={fontSize}
+      color={color}
+    >
       {children}
-    </Typography>
+    </MUITypography>
   );
 };
