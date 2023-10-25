@@ -13,11 +13,33 @@ import { IconButton } from '../iconButton';
 
 import { theme } from "../../theme";
 
-export interface IPropsFooter {
+interface IFooterInternalProps {
   children: React.ReactNode;
 }
 
-export const FooterContent = ({ children }: IPropsFooter) => {
+export interface IFooterProps {
+  contact?: {
+    phone?: string;
+    fax?: string;
+    email?: string;
+  },
+  logo?: string;
+  social?: {
+    facebook?: string;
+    youtube?: string;
+    twitter?: string;
+    instagram?: string;
+  },
+  links?: {
+    terms?: string;
+    privacy?: string;
+    faq?: string;
+  },
+  address?: string;
+  institutionFullName?: string;
+}
+
+export const FooterContent = ({ children }: IFooterInternalProps) => {
   return (
     <Box style={{ padding: "75px 25px", background: theme.palette.primary.main }}>
       <div
@@ -34,7 +56,7 @@ export const FooterContent = ({ children }: IPropsFooter) => {
   )
 }
 
-export const FooterBottom = ({ children }: IPropsFooter) => {
+export const FooterBottom = ({ children }: IFooterInternalProps) => {
   return (
     <div style={{ background: "white", padding: "12.5px 25px" }}>
       <div
@@ -51,14 +73,18 @@ export const FooterBottom = ({ children }: IPropsFooter) => {
   )
 }
 
-export const Footer = ({ children }: IPropsFooter) => {
+export const Footer = (props: IFooterProps) => {
+
+
   return (
     <div>
       <FooterContent>
         <GridContainer spacing={4}>
           <GridItem md={12} lg={3}>
             <div style={{ display: "flex" }}>
-              <img src="https://b2368105.smushcdn.com/2368105/wp-content/uploads/2021/06/logo.png?lossy=0&strip=1&webp=1" alt="logo" width="241" height="90" />
+              <img src={
+                props.logo || "https://b2368105.smushcdn.com/2368105/wp-content/uploads/2021/06/logo.png?lossy=0&strip=1&webp=1"
+              } alt="logo institucion" width="241" height="90" />
             </div>
           </GridItem>
           <GridItem md={12} lg={9}>
@@ -69,8 +95,7 @@ export const Footer = ({ children }: IPropsFooter) => {
                 </Typography>
                 <br />
                 <Typography color="white" fontWeight="400" fontSize="16">
-                  Oficina Gubernamental de Tecnologías de la Información y
-                  Comunicación (OGTIC)
+                  {props.institutionFullName}
                 </Typography>
               </GridItem>
 
@@ -79,14 +104,14 @@ export const Footer = ({ children }: IPropsFooter) => {
                   CONTÁCTANOS
                 </Typography>
                 <br />
+                {props.contact?.phone && <Typography color="white" fontWeight="400" fontSize="16">
+                  Tel: {props.contact?.phone}
+                </Typography>}
+                {props.contact?.fax && <Typography color="white" fontWeight="400" fontSize="16">
+                  Fax: {props.contact?.fax}
+                </Typography>}
                 <Typography color="white" fontWeight="400" fontSize="16">
-                  Tel: (809)-286-1009
-                </Typography>
-                <Typography color="white" fontWeight="400" fontSize="16">
-                  Fax: (809)-732-5465
-                </Typography>
-                <Typography color="white" fontWeight="400" fontSize="16">
-                  info@ogtic.gob.do
+                  {props.contact?.email}
                 </Typography>
               </GridItem>
 
@@ -96,9 +121,8 @@ export const Footer = ({ children }: IPropsFooter) => {
                 </Typography>
                 <br />
                 <Typography color="white" fontWeight="400" fontSize="16">
-                  Oficina Gubernamental de Tecnologías de la Información y
-                  Comunicación (OGTIC) Av. Rómulo Betancourt #311, Edificio
-                  Corporativo Vista 311, Santo Domingo, República Dominicana.
+                  {props.institutionFullName} <br />
+                  {props.address}
                 </Typography>
               </GridItem>
 
@@ -108,7 +132,9 @@ export const Footer = ({ children }: IPropsFooter) => {
                 </Typography>
                 <br />
                 <Typography color="white" fontWeight="400" fontSize="16">
-                  Términos de Uso Política de Privacidad Preguntas Frecuentes
+                  <a href={props.links?.terms} target='_blank' className='block cursor-pointer hover:underline'>Términos y Condiciones</a>
+                  <a href={props.links?.privacy} target='_blank' className='block cursor-pointer hover:underline'>Política de Privacidad</a>
+                  <a href={props.links?.faq} target='_blank' className='block cursor-pointer hover:underline'>Preguntas Frecuentes</a>
                 </Typography>
               </GridItem>
             </GridContainer>
@@ -126,10 +152,10 @@ export const Footer = ({ children }: IPropsFooter) => {
               </Typography>
               <img
                 style={{ marginLeft: "5px", cursor: "pointer" }}
-                src="https://b2368105.smushcdn.com/2368105/wp-content/uploads/2021/06/logo.png?lossy=0&strip=1&webp=1"
-                alt="logo ogtic"
+                src={props.logo || "https://b2368105.smushcdn.com/2368105/wp-content/uploads/2021/06/logo.png?lossy=0&strip=1&webp=1"}
+                alt="logo institucion"
                 width="55"
-                onClick={() => window.open("https://ogtic.gob.do/")}
+                onClick={() => window.open("/")}
               />
             </div>
           </GridItem>
@@ -145,21 +171,42 @@ export const Footer = ({ children }: IPropsFooter) => {
                 </Typography>
               </span>
 
-              <IconButton>
+              {/* <IconButton>
                 <FacebookIcon />
-              </IconButton>
+              </IconButton> */}
 
-              <IconButton>
-                <YouTubeIcon />
-              </IconButton>
+              {props.social?.facebook && (
+                <a href={props.social.facebook} target='_blank'>
+                  <IconButton>
+                    <FacebookIcon />
+                  </IconButton>
+                </a>
+              )}
 
-              <IconButton>
-                <TwitterIcon />
-              </IconButton>
+              {props.social?.youtube && (
+                <a href={props.social.youtube} target='_blank'>
+                  <IconButton>
+                    <YouTubeIcon />
+                  </IconButton>
+                </a>
+              )}
 
-              <IconButton>
-                <InstagramIcon />
-              </IconButton>
+              {props.social?.instagram && (
+                <a href={props.social.instagram} target='_blank'>
+                  <IconButton>
+                    <InstagramIcon />
+                  </IconButton>
+                </a>
+              )}
+
+              {props.social?.twitter && (
+                <a href={props.social.twitter} target='_blank'>
+                  <IconButton>
+                    <TwitterIcon />
+                  </IconButton>
+                </a>
+              )}
+
             </div>
           </GridItem>
         </GridContainer>
