@@ -32,7 +32,21 @@ Ahora, utiliza npm para instalar `@ogticrd/ui-kit`
 npm install @ogticrd/ui-kit
 ```
 
-- #### Paso 3: Importar y utilizar la librería en tu aplicación
+- #### Paso 3: Incluir el provider en el archivo raiz
+Con el fin de disponer de la configuración de los temas y los estilos pertinentes dentro del proyecto, se debe agregar la configuracion del **ThemeProvider** en el archivo raiz. Ej:``_app.ts``, ``app.js``, ``layout.js``, etc.
+
+```tsx
+import { ThemeProvider } from '@ogticrd/ui-kit'
+...
+ <ThemeProvider>
+    <body> 
+        {children}
+    </body>
+</ThemeProvider>
+...
+```
+
+- #### Paso 4: Importar y utilizar la librería en tu aplicación
 
 Abre el archivo donde deseas utilizar la librería. Importa la librería al principio del archivo:
 
@@ -59,7 +73,7 @@ function MiComponente() {
 export default MiComponente;
 ```
 
-- #### Paso 4: Ejecutar la aplicación
+- #### Paso 5: Ejecutar la aplicación
 
 Guarda tus cambios y ejecuta la aplicación:
 
