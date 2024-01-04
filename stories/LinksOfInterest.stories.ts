@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import LinksOfInterest from "../components/links-of-interest";
+import LinksOfInterest from '../components/links-of-interest';
 
 const meta = {
-  title: "Example/LinksOfInterest",
-  tags: ["autodocs"],
+  title: 'Example/LinksOfInterest',
+  tags: ['autodocs'],
   component: LinksOfInterest,
 } satisfies Meta<typeof LinksOfInterest>;
 

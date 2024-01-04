@@ -1,3 +1,6 @@
 pnpm-lock.yaml
 .vscode
 pnpm-workspace.yaml
+*.js
+.prettierrc
+tailwind.config.ts

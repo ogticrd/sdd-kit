@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Stepper } from "../components/stepper";
+import { Stepper } from '../components/stepper';
 
 const meta = {
-  title: "Example/Stepper",
-  tags: ["autodocs"],
+  title: 'Example/Stepper',
+  tags: ['autodocs'],
   component: Stepper,
 } satisfies Meta<typeof Stepper>;
 

@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Header } from "../components/header";
+import { Header } from '../components/header';
 
 const meta = {
-  title: "Example/Header",
-  tags: ["autodocs"],
+  title: 'Example/Header',
+  tags: ['autodocs'],
   component: Header,
 } satisfies Meta<typeof Header>;
 
@@ -12,18 +12,18 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-import Logo from "./assets/logoOGTIC.png";
-import React from "react";
-import { Button } from "../components/button";
-import { Icon } from "@mui/material";
+import Logo from './assets/logoOGTIC.png';
+import React from 'react';
+import { Button } from '../components/button';
+import { Icon } from '@mui/material';
 
 export const base: Story = {
   args: {
     logo: Logo.src,
     menuItems: [
-      { name: "Inicio", path: "/" },
-      { name: "Servicios", path: "/services" },
-      { name: "Contacto", path: "/contact" },
+      { name: 'Inicio', path: '/' },
+      { name: 'Servicios', path: '/services' },
+      { name: 'Contacto', path: '/contact' },
     ],
     searchBox: {
       onSeach: (value) => console.log(value),
@@ -32,7 +32,7 @@ export const base: Story = {
 };
 
 const customButton = Button({
-  children: "Custom button",
+  children: 'Custom button',
 });
 
 export const customElements: Story = {
@@ -40,9 +40,9 @@ export const customElements: Story = {
     dark: true,
     logo: Logo.src,
     menuItems: [
-      { name: "Inicio", path: "/" },
-      { name: "Servicios", path: "/services" },
-      { name: "Contacto", path: "/contact" },
+      { name: 'Inicio', path: '/' },
+      { name: 'Servicios', path: '/services' },
+      { name: 'Contacto', path: '/contact' },
     ],
     searchBox: {
       onSeach: (value) => console.log(value),

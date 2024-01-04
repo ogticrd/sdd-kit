@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Container } from "../components/container";
+import { Container } from '../components/container';
 
 const meta = {
-  title: "Example/Container",
-  tags: ["autodocs"],
+  title: 'Example/Container',
+  tags: ['autodocs'],
   component: Container,
 } satisfies Meta<typeof Container>;
 
@@ -14,7 +14,7 @@ type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
   args: {
-    children: "This is a Container",
-    maxWidth: "lg",
+    children: 'This is a Container',
+    maxWidth: 'lg',
   },
 };

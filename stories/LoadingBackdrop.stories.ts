@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { LoadingBackdrop } from "../components/loadingBackdrop";
+import { LoadingBackdrop } from '../components/loadingBackdrop';
 
 const meta = {
-  title: "Example/LoadingBackdrop",
-  tags: ["autodocs"],
+  title: 'Example/LoadingBackdrop',
+  tags: ['autodocs'],
   component: LoadingBackdrop,
 } satisfies Meta<typeof LoadingBackdrop>;
 
@@ -14,6 +14,6 @@ type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
   args: {
-    text: "",
+    text: '',
   },
 };

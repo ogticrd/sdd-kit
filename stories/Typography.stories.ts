@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { TypographyApp } from "../components/typography";
+import { TypographyApp } from '../components/typography';
 
 const meta = {
-  title: "Example/Typography",
-  tags: ["autodocs"],
+  title: 'Example/Typography',
+  tags: ['autodocs'],
   component: TypographyApp,
 } satisfies Meta<typeof TypographyApp>;
 
@@ -14,8 +14,8 @@ type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
   args: {
-    children: "Some text",
-    variant: "h1",
+    children: 'Some text',
+    variant: 'h1',
     gutterBottom: true,
   },
 };

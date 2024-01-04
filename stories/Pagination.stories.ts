@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Pagination } from "../components/pagination";
+import { Pagination } from '../components/pagination';
 
 const meta = {
-  title: "Example/Pagination",
-  tags: ["autodocs"],
+  title: 'Example/Pagination',
+  tags: ['autodocs'],
   component: Pagination,
 } satisfies Meta<typeof Pagination>;
 
@@ -14,7 +14,7 @@ type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
   args: {
-    color: "primary",
+    color: 'primary',
     totalPages: 10,
     currentPage: 1,
     onChange: (e, v) => {

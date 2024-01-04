@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { TextField } from "../components/textField";
+import { TextField } from '../components/textField';
 
 const meta = {
-  title: "Example/TextField",
-  tags: ["autodocs"],
+  title: 'Example/TextField',
+  tags: ['autodocs'],
   component: TextField,
 } satisfies Meta<typeof TextField>;
 
@@ -14,12 +14,12 @@ type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
   args: {
-    id: "id",
-    label: "Nombre",
-    variant: "outlined",
-    color: "primary",
+    id: 'id',
+    label: 'Nombre',
+    variant: 'outlined',
+    color: 'primary',
     args: {
-      size: "small",
+      size: 'small',
     },
   },
 };
