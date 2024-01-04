@@ -17,7 +17,7 @@ export interface HeaderProps {
   logo: any;
   dark?: boolean;
   menuItems: MenuItem[];
-  searchBox?: { onSeach: (value: string) => void };
+  searchBox?: { onSearch: (value: string) => void };
   customElements?: React.ReactNode[];
 }
 
@@ -35,7 +35,7 @@ export const Header = ({
       <div className="container mx-auto flex items-center justify-between px-4">
         <img src={logo} alt="logo" className="w-28" />
         <span className="flex items-center gap-4">
-          {searchBox && <SearchBox onSearch={searchBox.onSeach} />}
+          {searchBox && <SearchBox onSearch={searchBox.onSearch} />}
           {searchBox && <div className="h-12 border-l border-gray-300"></div>}
           <LinksOfInterest dark={dark} />
           {customElements?.length &&

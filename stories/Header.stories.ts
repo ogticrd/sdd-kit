@@ -13,9 +13,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 import Logo from './assets/logoOGTIC.png';
-import React from 'react';
 import { Button } from '../components/button';
-import { Icon } from '@mui/material';
 
 export const base: Story = {
   args: {
@@ -26,7 +24,7 @@ export const base: Story = {
       { name: 'Contacto', path: '/contact' },
     ],
     searchBox: {
-      onSeach: (value) => console.log(value),
+      onSearch: (value) => console.log(value),
     },
   },
 };
@@ -45,7 +43,7 @@ export const customElements: Story = {
       { name: 'Contacto', path: '/contact' },
     ],
     searchBox: {
-      onSeach: (value) => console.log(value),
+      onSearch: (value) => console.log(value),
     },
     customElements: [customButton],
   },
