@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TypographyApp } from '../components/typography';
+import { Typography } from '../components/typography';
 
 const meta = {
   title: 'Example/Typography',
   tags: ['autodocs'],
-  component: TypographyApp,
-} satisfies Meta<typeof TypographyApp>;
+  component: Typography,
+} satisfies Meta<typeof Typography>;
 
 export default meta;
 
