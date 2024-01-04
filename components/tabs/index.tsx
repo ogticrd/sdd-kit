@@ -1,7 +1,6 @@
 import * as React from 'react';
 import MUITabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 interface TabPanelProps {
@@ -21,11 +20,7 @@ function CustomTabPanel(props: TabPanelProps) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          {children}
-        </Box>
-      )}
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
 }
@@ -52,7 +47,11 @@ export const Tabs = ({ titles, children }: TabsProps) => {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <MUITabs value={value} onChange={handleChange} aria-label="basic tabs example">
+        <MUITabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+        >
           {titles.map((title, index) => (
             <Tab label={title} {...a11yProps(index)} />
           ))}
@@ -65,4 +64,4 @@ export const Tabs = ({ titles, children }: TabsProps) => {
       ))}
     </Box>
   );
-}
+};

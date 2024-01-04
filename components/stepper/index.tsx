@@ -6,7 +6,11 @@ import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-const steps = ['Select campaign settings', 'Create an ad group', 'Create an ad'];
+const steps = [
+  'Select campaign settings',
+  'Create an ad group',
+  'Create an ad',
+];
 
 export const Stepper = () => {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -113,4 +117,4 @@ export const Stepper = () => {
       )}
     </Box>
   );
-}
+};
