@@ -1,8 +1,7 @@
 import React from 'react';
-import AppsIcon from '@mui/icons-material/Apps';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { IconButton, Link } from '@mui/material';
+import { IconButton } from '@mui/material';
 import SearchBox from '../searchbox';
 import HeaderMenu from './menu';
 import LinksOfInterest from '../links-of-interest';
