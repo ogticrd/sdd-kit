@@ -34,7 +34,12 @@ export const Header = ({
       <div className="container mx-auto flex items-center justify-between px-4">
         <img src={logo} alt="logo" className="w-28" />
         <span className="flex items-center gap-4">
-          {searchBox && <SearchBox onSearch={searchBox.onSearch} />}
+          {searchBox && (
+            <SearchBox
+              onSearch={searchBox.onSearch}
+              placeholder="¿Qué quieres buscar?"
+            />
+          )}
           {searchBox && <div className="h-12 border-l border-gray-300"></div>}
           <LinksOfInterest dark={dark} />
           {customElements?.length &&

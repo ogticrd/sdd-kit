@@ -4,9 +4,10 @@ import React from 'react';
 
 export interface SearchBoxProps {
   onSearch: (value: string) => void;
+  placeholder?: string;
 }
 
-export default function SearchBox({ onSearch }: SearchBoxProps) {
+export default function SearchBox({ onSearch, placeholder }: SearchBoxProps) {
   const [searchValue, setSearchValue] = React.useState('');
 
   const handleSearch = () => {
@@ -17,8 +18,8 @@ export default function SearchBox({ onSearch }: SearchBoxProps) {
     <div className="flex items-center relative max-w-[16em]">
       <input
         type="text"
-        placeholder="¿Qué quieres buscar?"
-        className="border border-gray-300 rounded-3xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent h-10 w-full"
+        placeholder={placeholder}
+        className="border border-gray-300 rounded-3xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent h-10 w-full pr-10"
         onChange={(e) => setSearchValue(e.target.value)}
       />
       <button

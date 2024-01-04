@@ -15,5 +15,6 @@ import SearchBox from '../components/searchbox';
 export const playground: Story = {
   args: {
     onSearch: (value) => alert('Usted ha buscado: ' + value),
+    placeholder: '¿Qué quieres buscar?',
   },
 };
