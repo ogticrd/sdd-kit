@@ -120,7 +120,12 @@ export const Footer = (props: FooterProps) => {
                     Fax: {props.contact?.fax}
                   </Typography>
                 )}
-                <Typography color="white" fontWeight="400" fontSize="16">
+                <Typography
+                  color="white"
+                  className="truncate"
+                  fontWeight="400"
+                  fontSize="16"
+                >
                   {props.contact?.email}
                 </Typography>
               </GridItem>

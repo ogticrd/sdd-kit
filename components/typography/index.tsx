@@ -22,6 +22,7 @@ export interface TypographyProps {
   fontWeight?: number | string;
   fontSize?: number | string;
   color?: string;
+  className?: string;
 }
 
 export const Typography = ({
@@ -31,6 +32,7 @@ export const Typography = ({
   fontWeight,
   fontSize,
   color,
+  className,
 }: TypographyProps) => {
   return (
     <MUITypography
@@ -39,6 +41,7 @@ export const Typography = ({
       fontWeight={fontWeight}
       fontSize={fontSize}
       color={color}
+      className={className}
     >
       {children}
     </MUITypography>
