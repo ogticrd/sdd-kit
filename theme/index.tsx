@@ -83,15 +83,6 @@ export const theme = createTheme({
         },
       },
     },
-    // MuiTextField: {
-    //   defaultProps: {
-    //     sx: {
-    //       '& .MuiInputBase-root': {
-    //         background: '#F8F8F8',
-    //       },
-    //     }
-    //   }
-    // },
     MuiStepIcon: {
       styleOverrides: {
         root: {
