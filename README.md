@@ -42,7 +42,7 @@ import Button from '@ogticrd/ui-kit/Button';
 
 Luego, puedes utilizar los componentes o funciones proporcionadas por la librería en tu aplicación:
 
-```bash
+```jsx
 import Button from '@ogticrd/ui-kit/Button';
 
 function MiComponente() {
