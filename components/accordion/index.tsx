@@ -5,18 +5,17 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-interface IAcordeonChildren {
+interface AccordionChildren {
   title: string;
   subtitle: string;
   content: string | React.ReactNode;
 }
 
-interface IAcordeonProps {
-  elements: IAcordeonChildren[];
+interface AccordionProps {
+  elements: AccordionChildren[];
 }
 
-
-export const Accordion = ({ elements }: IAcordeonProps) => {
+export const Accordion = ({ elements }: AccordionProps) => {
   const [expanded, setExpanded] = React.useState<string | false>(false);
 
   const handleChange =
@@ -26,8 +25,12 @@ export const Accordion = ({ elements }: IAcordeonProps) => {
 
   return (
     <div>
-      {(elements || []).map((child: IAcordeonChildren, index: number) => (
-        <MUIAccordion key={index} expanded={expanded === 'panel' + index} onChange={handleChange('panel' + index)}>
+      {(elements || []).map((child: AccordionChildren, index: number) => (
+        <MUIAccordion
+          key={index}
+          expanded={expanded === 'panel' + index}
+          onChange={handleChange('panel' + index)}
+        >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1bh-content"
@@ -36,20 +39,19 @@ export const Accordion = ({ elements }: IAcordeonProps) => {
             <Typography sx={{ width: '33%', flexShrink: 0 }}>
               {child?.title}
             </Typography>
-            <Typography sx={{ color: 'text.secondary' }}>{child?.subtitle}</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>
+              {child?.subtitle}
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             {typeof child.content === 'string' ? (
-              <Typography>
-                {child.content}
-              </Typography>
+              <Typography>{child.content}</Typography>
             ) : (
               child.content
             )}
-
           </AccordionDetails>
         </MUIAccordion>
       ))}
     </div>
   );
-}
+};

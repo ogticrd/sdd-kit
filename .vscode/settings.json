@@ -1,3 +1,4 @@
 {
-  "conventionalCommits.scopes": ["library", "configuration"]
+  "conventionalCommits.scopes": ["library", "configuration"],
+  "editor.formatOnSave": true,
 }

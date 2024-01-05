@@ -1,11 +1,17 @@
 import Grid from '@mui/material/Grid';
 import React from 'react';
 
-export interface IPropsContainer {
+export interface GridContainerProps {
   children: React.ReactNode;
   spacing?: number;
   direction?: 'row' | 'row-reverse' | 'column' | 'column' | 'column-reverse';
-  justifyContent?: 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly';
+  justifyContent?:
+    | 'flex-start'
+    | 'center'
+    | 'flex-end'
+    | 'space-between'
+    | 'space-around'
+    | 'space-evenly';
   alignItems?: 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline';
 }
 
@@ -15,19 +21,19 @@ export const GridContainer = ({
   direction,
   justifyContent,
   alignItems,
-}: IPropsContainer) => (
+}: GridContainerProps) => (
   <Grid
     container
     spacing={spacing ? spacing : 0}
-    direction={direction ? direction : "row"}
+    direction={direction ? direction : 'row'}
     justifyContent={justifyContent ? justifyContent : 'flex-start'}
-    alignItems={alignItems ? alignItems : "flex-start"}
+    alignItems={alignItems ? alignItems : 'flex-start'}
   >
     {children}
   </Grid>
 );
 
-export interface IPropsItem {
+export interface GridItemProps {
   children?: React.ReactNode;
   sm?: number;
   md?: number;
@@ -39,7 +45,7 @@ export const GridItem = ({
   sm = 12,
   md = 6,
   lg = 4,
-}: IPropsItem) => (
+}: GridItemProps) => (
   <Grid item sm={sm} md={md} lg={lg}>
     {children}
   </Grid>

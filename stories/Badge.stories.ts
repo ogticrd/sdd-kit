@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Badge } from "../components/badge";
+import { Badge } from '../components/badge';
 
 const meta = {
-  title: "Example/Badge",
-  tags: ["autodocs"],
+  title: 'Example/Badge',
+  tags: ['autodocs'],
   component: Badge,
 } satisfies Meta<typeof Badge>;
 
@@ -14,9 +14,9 @@ type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
   args: {
-    variant: "filled",
-    color: "primary",
-    size: "medium",
-    label: "Example",
+    variant: 'filled',
+    color: 'primary',
+    size: 'medium',
+    label: 'Example',
   },
 };

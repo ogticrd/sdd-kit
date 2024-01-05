@@ -4,28 +4,34 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { theme } from '../../theme';
 
-export interface ICardProps {
+export interface CardProps {
   title?: string;
   subTitle?: string;
   children?: any;
 }
 
-export const Card = ({ title, subTitle, children }: ICardProps) => {
+export const Card = ({ title, subTitle, children }: CardProps) => {
   return (
     <MUICard sx={{ minWidth: 275 }} elevation={0}>
       <CardContent>
-        {title &&
-          <Typography variant="h5" component="div" color={theme.palette.primary.main} fontWeight="bold" gutterBottom>
+        {title && (
+          <Typography
+            variant="h5"
+            component="div"
+            color={theme.palette.primary.main}
+            fontWeight="bold"
+            gutterBottom
+          >
             {title}
           </Typography>
-        }
-        {subTitle &&
+        )}
+        {subTitle && (
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             {subTitle}
           </Typography>
-        }
+        )}
         {children}
       </CardContent>
     </MUICard>
   );
-}
+};

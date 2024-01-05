@@ -1,14 +1,13 @@
 import * as React from 'react';
 import MUICheckbox from '@mui/material/Checkbox';
 
-interface ICheckboxProps {
+interface CheckboxProps {
   checked: boolean;
   onChange: (val: boolean) => void;
 }
 
-export const Checkbox = ({ checked, onChange }: ICheckboxProps) => {
-
-  const [value, setValue] = React.useState<boolean>(checked);
+export const Checkbox = ({ checked, onChange }: CheckboxProps) => {
+  const [_, setValue] = React.useState<boolean>(checked);
 
   return (
     <div>
@@ -22,4 +21,4 @@ export const Checkbox = ({ checked, onChange }: ICheckboxProps) => {
       />
     </div>
   );
-}
+};

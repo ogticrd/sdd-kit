@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import MUIButton from '@mui/material/Button';
 
-export interface IButtonProps {
+export interface ButtonProps {
   disabled?: boolean;
   submit?: boolean;
   onClick?: () => void;
@@ -11,13 +11,13 @@ export interface IButtonProps {
   endIcon?: any;
   size?: 'small' | 'medium' | 'large' | undefined;
   color?:
-  | 'inherit'
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'error'
-  | 'info'
-  | 'warning';
+    | 'inherit'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'error'
+    | 'info'
+    | 'warning';
   variant?: 'text' | 'outlined' | 'contained';
 }
 
@@ -32,20 +32,18 @@ export const Button = ({
   startIcon = null,
   endIcon = null,
   color,
-}: IButtonProps) => {
-  return (
-    <MUIButton
-      size={size}
-      variant={variant}
-      disabled={disabled}
-      type={submit ? 'submit' : 'button'}
-      onClick={onClick}
-      color={color ? color : 'primary'}
-      fullWidth={notFullWidth ? false : true}
-      startIcon={startIcon}
-      endIcon={endIcon}
-    >
-      {children}
-    </MUIButton>
-  );
-};
+}: ButtonProps) => (
+  <MUIButton
+    size={size}
+    variant={variant}
+    disabled={disabled}
+    type={submit ? 'submit' : 'button'}
+    onClick={onClick}
+    color={color ? color : 'primary'}
+    fullWidth={notFullWidth ? false : true}
+    startIcon={startIcon}
+    endIcon={endIcon}
+  >
+    {children}
+  </MUIButton>
+);
