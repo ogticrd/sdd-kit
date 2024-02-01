@@ -1,19 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Alert } from "../components/alert";
+import { Snackbar } from "../components/snackbar";
 
 const meta = {
-  title: "Example/Alert",
+  title: "Example/Snackbar",
   tags: ["autodocs"],
-  component: Alert,
-} satisfies Meta<typeof Alert>;
+  component: Snackbar,
+} satisfies Meta<typeof Snackbar>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
-  args: {
-    text: "Esta es una alerta",
-  },
+  args: {},
 };

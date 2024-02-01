@@ -112,7 +112,7 @@ export default function LinksOfInterest({ dark = false }: { dark?: boolean }) {
         <div className='relative w-fit' onClick={(e) => {
             e.stopPropagation();
         }}>
-            <AppsIcon fontSize='large' htmlColor={dark ? '#fff' : 'rgb(30 58 138)'} onClick={
+            <AppsIcon style={{ cursor: "pointer" }} fontSize='large' htmlColor={dark ? '#fff' : 'rgb(30 58 138)'} onClick={
                 () => setIsMenuOpen(!isMenuOpen)
             } />
             {

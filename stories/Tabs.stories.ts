@@ -13,13 +13,13 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const tab1Content = React.createElement("div", null, "Tab 1 content");
-const tab2Content = React.createElement("div", null, "Tab 2 content");
-const tab3Content = React.createElement("div", null, "Tab 3 content");
+const tab1Content = React.createElement("div", null, "Contenido pestaña 1");
+const tab2Content = React.createElement("div", null, "Contenido pestaña 2");
+const tab3Content = React.createElement("div", null, "Contenido pestaña 3");
 
 export const playground: Story = {
   args: {
-    titles: ["Tab 1", "Tab 2", "Tab 3"],
+    titles: ["Pestaña 1", "Pestaña 2", "Pestaña 3"],
     children: [tab1Content, tab2Content, tab3Content],
   },
 };

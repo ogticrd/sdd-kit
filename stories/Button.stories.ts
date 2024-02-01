@@ -14,6 +14,6 @@ type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
   args: {
-    children: "Button",
+    children: "Botón",
   },
 };

@@ -23,13 +23,13 @@ export const theme = createTheme({
     h1: {
       fontWeight: '600',
       fontSize: '60px',
-      lineHeight: '80px',
+      // lineHeight: '80px',
       color: '#003876',
     },
     h2: {
       fontWeight: '500',
-      fontSize: '60px',
-      lineHeight: '90px',
+      // fontSize: '60px',
+      // lineHeight: '90px',
       color: '#000000',
     },
     body1: {
@@ -49,11 +49,19 @@ export const theme = createTheme({
   },
 
   components: {
-    MuiCard: {
+    MuiCssBaseline: {
       styleOverrides: {
-        root: {
-          borderTop: "4px solid red",
-          boxShadow: "0px 3px 6px #f3f3f3"
+        ".MuiBox-root": {
+          border: "1px solid #E2E2E2",
+          padding: "15px",
+          borderRadius: "5px"
+        }
+      }
+    },
+    MuiButton: {
+      defaultProps: {
+        sx: {
+          borderRadius: "999px",
         }
       }
     },

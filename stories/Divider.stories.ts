@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Card } from "../components/card";
+import { Divider } from "../components/divider";
 
 const meta = {
-  title: "Example/Card",
+  title: "Example/Divider",
   tags: ["autodocs"],
-  component: Card,
-} satisfies Meta<typeof Card>;
+  component: Divider,
+} satisfies Meta<typeof Divider>;
 
 export default meta;
 
@@ -14,8 +14,6 @@ type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
   args: {
-    title: "Texto de Ejemplo",
-    subTitle: "Otro Texto de Ejemplo",
-    children: "",
+    children: "Texto o componente",
   },
 };
