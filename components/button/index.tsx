@@ -5,7 +5,7 @@ export interface IButtonProps {
   disabled?: boolean;
   submit?: boolean;
   onClick?: () => void;
-  notFullWidth?: boolean;
+  fullWidth?: boolean;
   children: React.ReactNode;
   startIcon?: any;
   endIcon?: any;
@@ -26,7 +26,7 @@ export const Button = ({
   variant = 'contained',
   submit,
   onClick,
-  notFullWidth,
+  fullWidth,
   children,
   size = 'medium',
   startIcon = null,
@@ -41,7 +41,7 @@ export const Button = ({
       type={submit ? 'submit' : 'button'}
       onClick={onClick}
       color={color ? color : 'primary'}
-      fullWidth={notFullWidth ? false : true}
+      fullWidth={fullWidth ? true : false}
       startIcon={startIcon}
       endIcon={endIcon}
     >
