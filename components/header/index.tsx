@@ -14,21 +14,22 @@ export interface IMenuItem {
 }
 export interface IHeaderProps {
   logo: any;
+  logoWidth?: number;
   dark?: boolean;
-  menuItems: IMenuItem[];
+  menuItems?: IMenuItem[];
   searchBox?: { onSeach: (value: string) => void };
   customElements?: React.ReactNode[];
   customLinks?: React.ReactNode[];
 }
 
-export const Header = ({ logo, dark, menuItems, searchBox, customElements, customLinks }: IHeaderProps) => {
+export const Header = ({ logo, logoWidth, dark, menuItems, searchBox, customElements, customLinks }: IHeaderProps) => {
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <header className={`${dark ? 'bg-blue-900' : 'bg-white'}`}>
-      <div className='container mx-auto flex items-center justify-between px-4'>
-        <img src={logo} alt='logo' className='w-28' />
+    <header className={`${dark ? 'bg-blue-900' : 'bg-white'}`} style={{ position: "absolute", width: "100%" }}>
+      <div className='container mx-auto flex items-center justify-between px-4 py-2'>
+        <img style={{ cursor: "pointer" }} src={logo} alt='logo' width={logoWidth ? logoWidth : 220} />
         <span className='flex items-center gap-4'>
           {customLinks?.length && customLinks.map((element, index) =>
             <div key={index}>{element}</div>
