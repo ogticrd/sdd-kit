@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
+import { Button } from "../components/button";
 import { Header } from "../components/header";
+import Logo from "./assets/logoOGTIC.png";
 
 const meta = {
   title: "Example/Header",
@@ -12,14 +13,21 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-import Logo from "./assets/logoOGTIC.png";
-import React from "react";
-import { Button } from "../components/button";
-import { Icon } from "@mui/material";
+const customLinks1 = Button({
+  variant: "text",
+  color: "info",
+  children: "Link 1",
+});
+const customLinks2 = Button({
+  variant: "text",
+  color: "info",
+  children: "Link 2",
+});
 
 export const base: Story = {
   args: {
     logo: Logo.src,
+    customLinks: [customLinks1, customLinks2],
     menuItems: [
       { name: "Inicio", path: "/" },
       { name: "Servicios", path: "/services" },
@@ -32,6 +40,7 @@ export const base: Story = {
 };
 
 const customButton = Button({
+  color: "inherit",
   children: "Custom button",
 });
 

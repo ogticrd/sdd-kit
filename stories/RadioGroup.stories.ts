@@ -14,20 +14,20 @@ type Story = StoryObj<typeof meta>;
 
 const options = [
   {
-    label: "Option 1",
+    label: "Opción 1",
     value: "option1",
   },
   {
-    label: "Option 2",
+    label: "Opción 2",
     value: "option2",
     disabled: true,
   },
   {
-    label: "Option 3",
+    label: "Opción 3",
     value: "option3",
   },
   {
-    label: "Option 4",
+    label: "Opción 4",
     value: "option4",
   },
 ];
@@ -35,7 +35,7 @@ const options = [
 export const playground: Story = {
   args: {
     options: options,
-    label: "Select an option",
+    label: "Seleccione una opción",
     value: "option1",
     onChange: (v) => {
       console.log(v);

@@ -1,13 +1,12 @@
-import { IconButton } from '@mui/material';
+import React from 'react'
 import SearchIcon from '@mui/icons-material/Search';
-
-import React, { useEffect } from 'react'
 
 export interface ISearchBoxProps {
     onSearch: (value: string) => void;
+    fullWidth?: boolean;
 }
 
-export default function SearchBox({ onSearch }: ISearchBoxProps) {
+export default function SearchBox({ onSearch, fullWidth }: ISearchBoxProps) {
 
     const [searchValue, setSearchValue] = React.useState('');
 
@@ -16,7 +15,7 @@ export default function SearchBox({ onSearch }: ISearchBoxProps) {
     }
 
     return (
-        <div className='flex items-center relative max-w-[16em]'>
+        <div className={`flex items-center relative ${fullWidth ? 'w-full' : 'max-w-[16em]'}`}>
             <input
                 type="text"
                 placeholder="¿Qué quieres buscar?"
@@ -26,7 +25,6 @@ export default function SearchBox({ onSearch }: ISearchBoxProps) {
             <button onClick={handleSearch} className='bg-red-500 rounded-full flex items-center justify-center h-10 w-10 absolute right-0'>
                 <SearchIcon htmlColor='#fff' />
             </button>
-
         </div>
     )
 }
