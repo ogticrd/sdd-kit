@@ -13,5 +13,18 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
-  args: {},
+  args: {
+    name: "Ejemplo",
+    items: [
+      {
+        name: "Ejemplo 1",
+      },
+      {
+        name: "Ejemplo 2",
+      },
+      {
+        name: "Ejemplo 3",
+      },
+    ],
+  },
 };

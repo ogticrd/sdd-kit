@@ -3,7 +3,12 @@ import Button from '@mui/material/Button';
 import MUIMenu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-export const Menu = ({ }) => {
+export interface IPropsMenu {
+  name: string;
+  items: any[];
+}
+
+export const Menu = ({ name, items = [] }: IPropsMenu) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -22,7 +27,7 @@ export const Menu = ({ }) => {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        Dashboard
+        {name}
       </Button>
       <MUIMenu
         id="basic-menu"
@@ -33,10 +38,12 @@ export const Menu = ({ }) => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        {items &&
+          items.map((item: any, index: number) => (
+            <MenuItem key={index} onClick={handleClose}>{item.name}</MenuItem>
+          ))
+        }
       </MUIMenu>
-    </div>
+    </div >
   );
 }
