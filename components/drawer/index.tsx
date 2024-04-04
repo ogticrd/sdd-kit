@@ -11,9 +11,14 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
+export interface IPropsDrawer {
+  anchor: Anchor;
+  children: React.ReactNode;
+}
+
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
-export const Drawer = ({ }) => {
+export const Drawer = ({ children, anchor }: IPropsDrawer) => {
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -42,48 +47,24 @@ export const Drawer = ({ }) => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+      {children}
     </Box>
   );
 
   return (
     <div>
-      {(['left', 'right', 'top', 'bottom'] as const).map((anchor) => (
-        <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-          <MUIDrawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-          >
-            {list(anchor)}
-          </MUIDrawer>
-        </React.Fragment>
-      ))}
+      {/* {(['left', 'right', 'top', 'bottom'] as const).map((anchor) => ( */}
+      <React.Fragment key={anchor}>
+        <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+        <MUIDrawer
+          anchor={anchor}
+          open={state[anchor]}
+          onClose={toggleDrawer(anchor, false)}
+        >
+          {list(anchor)}
+        </MUIDrawer>
+      </React.Fragment>
+      {/* ))} */}
     </div>
   );
 }
