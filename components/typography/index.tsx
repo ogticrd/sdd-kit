@@ -8,9 +8,11 @@ export interface IPropsTypography {
   fontWeight?: number | string;
   fontSize?: number | string;
   color?: string
+  textAlign?: 'right' | 'left' | 'center'
+  lineHeight?: string
 }
 
-export const Typography = ({ children, variant, gutterBottom, fontWeight, fontSize, color }: IPropsTypography) => {
+export const Typography = ({ children, variant, gutterBottom, fontWeight, fontSize, color, textAlign, lineHeight }: IPropsTypography) => {
   return (
     <MUITypography
       variant={variant ? variant : "body1"}
@@ -18,6 +20,8 @@ export const Typography = ({ children, variant, gutterBottom, fontWeight, fontSi
       fontWeight={fontWeight}
       fontSize={fontSize}
       color={color}
+      textAlign={textAlign ? textAlign : "left"}
+      lineHeight={lineHeight}
     >
       {children}
     </MUITypography>
