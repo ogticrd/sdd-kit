@@ -13,5 +13,20 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
-  args: {},
+  args: {
+    links: [
+      {
+        link: "Breadcrumbs 1",
+        name: "Breadcrumbs 1",
+      },
+      {
+        link: "Breadcrumbs 2",
+        name: "Breadcrumbs 2",
+      },
+      {
+        link: "Breadcrumbs 3",
+        name: "Breadcrumbs 3",
+      },
+    ],
+  },
 };
