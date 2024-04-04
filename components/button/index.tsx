@@ -19,6 +19,7 @@ export interface IButtonProps {
   | 'info'
   | 'warning';
   variant?: 'text' | 'outlined' | 'contained';
+  fontWeight?: boolean;
 }
 
 export const Button = ({
@@ -32,6 +33,7 @@ export const Button = ({
   startIcon = null,
   endIcon = null,
   color,
+  fontWeight
 }: IButtonProps) => {
   return (
     <MUIButton
@@ -44,6 +46,7 @@ export const Button = ({
       fullWidth={fullWidth ? true : false}
       startIcon={startIcon}
       endIcon={endIcon}
+      style={{ fontWeight: fontWeight ? "bold" : "normal" }}
     >
       {children}
     </MUIButton>
