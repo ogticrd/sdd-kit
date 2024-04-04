@@ -7,7 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 interface IAcordeonChildren {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   content: string | React.ReactNode;
 }
 
