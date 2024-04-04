@@ -4,8 +4,14 @@ import MUISnackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-export const Snackbar = ({ }) => {
-  const [open, setOpen] = React.useState(false);
+export interface IPropsSnackbar {
+  openMessage: boolean;
+  message: string;
+  autoHideDuration?: number;
+}
+
+export const Snackbar = ({ openMessage = true, message, autoHideDuration }: IPropsSnackbar) => {
+  const [open, setOpen] = React.useState(openMessage);
 
   const handleClick = () => {
     setOpen(true);
@@ -21,9 +27,6 @@ export const Snackbar = ({ }) => {
 
   const action = (
     <React.Fragment>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        UNDO
-      </Button>
       <IconButton
         size="small"
         aria-label="close"
@@ -36,15 +39,12 @@ export const Snackbar = ({ }) => {
   );
 
   return (
-    <div>
-      <Button onClick={handleClick}>Open Snackbar</Button>
-      <MUISnackbar
-        open={open}
-        autoHideDuration={6000}
-        onClose={handleClose}
-        message="Note archived"
-        action={action}
-      />
-    </div>
+    <MUISnackbar
+      open={open}
+      autoHideDuration={autoHideDuration ? autoHideDuration : 6000}
+      onClose={handleClose}
+      message={message}
+      action={action}
+    />
   );
 }
