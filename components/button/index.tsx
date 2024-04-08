@@ -7,8 +7,8 @@ export interface IButtonProps {
   onClick?: () => void;
   fullWidth?: boolean;
   children: React.ReactNode;
-  startIcon?: any;
-  endIcon?: any;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
   size?: 'small' | 'medium' | 'large' | undefined;
   color?:
   | 'inherit'
@@ -20,6 +20,7 @@ export interface IButtonProps {
   | 'warning';
   variant?: 'text' | 'outlined' | 'contained';
   fontWeight?: boolean;
+  style?: React.CSSProperties
 }
 
 export const Button = ({
@@ -33,7 +34,8 @@ export const Button = ({
   startIcon = null,
   endIcon = null,
   color,
-  fontWeight
+  fontWeight,
+  style
 }: IButtonProps) => {
   return (
     <MUIButton
@@ -46,7 +48,8 @@ export const Button = ({
       fullWidth={fullWidth ? true : false}
       startIcon={startIcon}
       endIcon={endIcon}
-      style={{ fontWeight: fontWeight ? "bold" : "normal" }}
+      sx={{ fontWeight: fontWeight ? "bold" : "normal" }}
+      style={style}
     >
       {children}
     </MUIButton>
