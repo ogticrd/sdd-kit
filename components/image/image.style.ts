@@ -1,23 +1,6 @@
 import type { VariantProps } from "tailwind-variants";
-
 import { tv } from "../../utils/tv";
 
-/**
- * Image wrapper **Tailwind Variants** component
- *
- * const {img, wrapper, blurredImg, zoomedWrapper} = image({...})
- *
- * @example
- * <div className={wrapper()}>
- *    <img alt="image" className={img())} src="https://..." />
- *      // wrap the image if you want to zoom it
- *      <div className={zoomedWrapper()}>
- *       <img alt="image" className={img())} src="https://..." />
- *     </div>
- *    // duplicate it for the blur effect
- *    <img alt="image" className={blurredImg())} src="https://..." />
- * </div>
- */
 const image = tv({
     slots: {
         wrapper: "relative shadow-black/5",
