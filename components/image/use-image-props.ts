@@ -15,7 +15,6 @@ export function useImageProps(originalProps: UseImageProps) {
         ref,
         src,
         className,
-        // classNames,
         loading,
         isBlurred,
         fallbackSrc,
@@ -89,30 +88,25 @@ export function useImageProps(originalProps: UseImageProps) {
             : {};
 
         return {
-            //   className: slots.wrapper({class: classNames?.wrapper}),
             className: slots.wrapper(),
             style: {
                 ...fallbackStyle,
                 maxWidth: w,
             },
         };
-        //   }, [slots, showFallback, fallbackSrc, classNames?.wrapper]);
     }, [slots, showFallback, fallbackSrc]);
 
     const getBlurredImgProps = useCallback<PropGetter>(() => {
         return {
             src,
             "aria-hidden": dataAttr(true),
-            //   className: slots.blurredImg({class: classNames?.blurredImg}),
             className: slots.blurredImg(),
         };
-        //   }, [slots, src, classNames?.blurredImg]);
     }, [slots, src]);
 
     return {
         domRef,
         slots,
-        // classNames,
         isBlurred,
         disableSkeleton,
         fallbackSrc,
