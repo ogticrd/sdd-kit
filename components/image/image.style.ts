@@ -1,6 +1,6 @@
 import type { VariantProps } from "tailwind-variants";
 
-import { tv } from "@/utils/tv";
+import { tv } from "../../utils/tv";
 
 /**
  * Image wrapper **Tailwind Variants** component

@@ -1,15 +1,15 @@
-import { mapPropsVariants } from "@/utils/tv";
+import { mapPropsVariants } from "../../utils/tv";
 import { UseImageProps } from "./image.interface";
 import { image } from "./image.style";
 import { useImageBase } from "./use-image-base";
-import { useDOMRef } from "@/utils/dom.util";
+import { useDOMRef } from "../../utils/dom.util";
 import { useCallback, useMemo } from "react";
 import { PropGetter } from "./types";
 import { clsx } from "clsx";
-import { dataAttr } from "@/utils/assertion";
+import { dataAttr } from "../../utils/assertion";
 
-export function useImageProps(originalProps: UseImageProps & any) {
-    const [props, variantProps] = mapPropsVariants(originalProps, {} as any) as any;
+export function useImageProps(originalProps: UseImageProps) {
+    const [props, variantProps] = mapPropsVariants(originalProps, image.variantKeys);
 
     const {
         ref,
@@ -110,7 +110,6 @@ export function useImageProps(originalProps: UseImageProps & any) {
     }, [slots, src]);
 
     return {
-        // Component,
         domRef,
         slots,
         // classNames,

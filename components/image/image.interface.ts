@@ -1,5 +1,5 @@
 import { ImgHTMLAttributes } from "react";
-// import { ImageVariantProps } from "./image.style";
+import { ImageVariantProps } from "./image.style";
 
 type NativeImageProps = ImgHTMLAttributes<HTMLImageElement>;
 
@@ -29,5 +29,4 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     // classNames?: SlotsToClasses<ImageSlots>;
 }
 
-// export type UseImageProps = ImageProps & ImageVariantProps;
-export type UseImageProps = ImageProps
+export type UseImageProps = ImageProps & ImageVariantProps;

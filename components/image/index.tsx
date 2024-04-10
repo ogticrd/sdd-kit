@@ -7,7 +7,7 @@ export interface ImageProps extends Omit<UseImageProps, "showSkeleton"> { }
 const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref: any) => {
     const {
         domRef,
-        // slots,
+        slots,
         isBlurred,
         isZoomed,
         fallbackSrc,
@@ -18,34 +18,34 @@ const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref: any) => {
         getBlurredImgProps,
     } = useImageProps({
         ...props,
+        src: "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg",
+        width: 300,
         ref,
     });
 
     const img = <img ref={domRef} {...getImgProps()} />;
 
-    // if (removeWrapper) return img;
+    if (removeWrapper) return img;
 
-    // const zoomed = (
-    //     // <div className={slots.zoomedWrapper()}>{img}</div>
-    //     <div>{img}</div>
-    // )
+    const zoomed = (
+        <div className={slots.zoomedWrapper()}>{img}</div>
+    )
 
-    // if (isBlurred) {
-    //     return (
-    //         <div {...getWrapperProps()}>
-    //             {isZoomed ? zoomed : img}
-    //             {cloneElement(img, getBlurredImgProps())}
-    //         </div>
-    //     )
-    // }
+    if (isBlurred) {
+        return (
+            <div {...getWrapperProps()}>
+                {isZoomed ? zoomed : img}
+                {cloneElement(img, getBlurredImgProps())}
+            </div>
+        )
+    }
 
-    // if (isZoomed || !disableSkeleton || fallbackSrc) {
-    //     return <div {...getWrapperProps()}> {isZoomed ? zoomed : img}</div>;
-    // }
+    if (isZoomed || !disableSkeleton || fallbackSrc) {
+        return <div {...getWrapperProps()}> {isZoomed ? zoomed : img}</div>;
+    }
 
     return img;
 
-    // return <img />
 })
 
 Image.displayName = "Image";
