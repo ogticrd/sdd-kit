@@ -4,7 +4,7 @@ import { UseImageProps } from "./image.interface";
 
 export interface ImageProps extends Omit<UseImageProps, "showSkeleton"> { }
 
-const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref: any) => {
+const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
     const {
         domRef,
         slots,
@@ -18,8 +18,6 @@ const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref: any) => {
         getBlurredImgProps,
     } = useImageProps({
         ...props,
-        src: "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg",
-        width: 300,
         ref,
     });
 
