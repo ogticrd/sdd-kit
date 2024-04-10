@@ -29,22 +29,6 @@ type ImageEvent = SyntheticEvent<HTMLImageElement, Event>;
 
 export const useSafeLayoutEffect = Boolean(globalThis?.document) ? useLayoutEffect : useEffect;
 
-/**
- * React hook that loads an image in the browser,
- * and lets us know the `status` so we can show image
- * fallback if it is still `pending`
- *
- * @returns the status of the image loading progress
- *
- * @example
- *
- * ```jsx
- * function App(){
- *   const status = useImage({ src: "image.png" })
- *   return status === "loaded" ? <img src="image.png" /> : <Placeholder />
- * }
- * ```
- */
 export function useImageBase(props: UseImageProps = {}) {
     const { loading, src, srcSet, onLoad, onError, crossOrigin, sizes, ignoreFallback } = props;
 
