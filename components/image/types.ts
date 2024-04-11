@@ -1,3 +1,5 @@
+export type As<Props = any> = React.ElementType<Props>;
+
 export interface DOMElement extends Element, HTMLOrSVGElement { }
 
 type DataAttributes = {
