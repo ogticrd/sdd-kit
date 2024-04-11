@@ -13,6 +13,7 @@ export function useImageProps(originalProps: UseImageProps) {
 
     const {
         ref,
+        as,
         src,
         className,
         loading,
@@ -47,6 +48,8 @@ export function useImageProps(originalProps: UseImageProps) {
     const isZoomed = originalProps.isZoomed;
 
     const domRef = useDOMRef(ref);
+
+    const Component = useMemo(() => as || "img", [as])
 
     const w = useMemo(() => {
         const w = props.width ? typeof props.width === "number" ? `${props.width}px` : props.width : "fit-content";
@@ -106,6 +109,7 @@ export function useImageProps(originalProps: UseImageProps) {
 
     return {
         domRef,
+        Component,
         slots,
         isBlurred,
         disableSkeleton,
