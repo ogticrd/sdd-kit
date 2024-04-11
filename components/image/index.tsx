@@ -7,6 +7,7 @@ export interface ImageProps extends Omit<UseImageProps, "showSkeleton"> { }
 const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
     const {
         domRef,
+        Component,
         slots,
         isBlurred,
         isZoomed,
@@ -21,7 +22,7 @@ const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
         ref,
     });
 
-    const img = <img ref={domRef} {...getImgProps()} />;
+    const img = <Component ref={domRef} {...getImgProps()} />;
 
     if (removeWrapper) return img;
 
