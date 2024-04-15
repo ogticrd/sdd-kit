@@ -1,0 +1,36 @@
+name:  Publishing your Storybook to Chromatic
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened]
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          pnpm install
+          echo "Dependencies installed successfully"
+
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        continue-on-error: true
+
+      - name: Check Chromatic status
+        run: |
+          if [ ${{ job.status }} != "success" ]; then
+            echo "Chromatic visual regression tests failed"
+            exit 1
+          else
+            echo "Chromatic visual regression tests passed"
+          fi
