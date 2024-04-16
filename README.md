@@ -83,6 +83,39 @@ cd sdd-kit
 pnpm install
 pnpm storybook
 ```
+## Uso de Chromatic
+
+> Chromatic nos permite detectar y corregir problemas visuales en nuestra librería, lo que garantiza una experiencia de usuario consistente y de alta calidad.
+
+### Configuración
+
+- #### Paso 1: Instalación 
+
+Agrega el paquete como una dependencia de desarrollo.
+
+```bash
+yarn add -D chromatic
+```
+
+- #### Paso 2: Inicia sesión con Chromatic 
+
+Una vez que el paquete esté instalado, [inicia sesión con Chromatic](https://www.chromatic.com/start?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook) con tu cuenta de GitHub (Chromatic solo solicitará permisos muy ligeros), luego crearemos un nuevo proyecto que se llama "uikit" y lo sincronizaremos con el repositorio de GitHub que hemos configurado.
+
+Haz click en `Choose GitHub repo` abajo de colaboradores y selecciona tu repositorio.
+
+- #### Paso 3: Ejecutar Chromatic
+
+Copia el `project-token` único que se generó para tu proyecto. Después ejecútala con el siguiente comando para construir e implementar nuestro Storybook. Asegúrate de reemplazar `project-token` con su token de proyecto.
+
+```bash
+yarn chromatic --project-token=<project-token>
+```
+
+Cuando termines, vas a recibir un enlace `https://random-uuid.chromatic.com` a tu Storybook publicado.
+
+## Integración con CI/CD
+
+Si deseas integrar Chromatic en tu flujo de integración continua (CI) y despliegue continuo (CD), puedes seguir la [documentación de Chromatic sobre integración con CI/CD](https://storybook.js.org/tutorials/intro-to-storybook/react/es/deploy/) para obtener instrucciones detalladas sobre cómo hacerlo.
 
 ## Tecnologías
 
@@ -100,4 +133,4 @@ pnpm storybook
 
 ## Información adicional
 
-Información de diseño [https://uxkit.digital.gob.do/](https://uxkit.digital.gob.do/)
+Información de diseño: [https://uxkit.digital.gob.do/](https://uxkit.digital.gob.do/)
