@@ -17,7 +17,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pnpm install
+          npm install
           echo "Dependencies installed successfully"
 
       - name: Run Chromatic
@@ -27,10 +27,7 @@ jobs:
         continue-on-error: true
 
       - name: Check Chromatic status
+        if: failure()
         run: |
-          if [ ${{ job.status }} != "success" ]; then
-            echo "Chromatic visual regression tests failed"
-            exit 1
-          else
-            echo "Chromatic visual regression tests passed"
-          fi
+          echo "Chromatic visual regression tests failed"
+          exit 1
