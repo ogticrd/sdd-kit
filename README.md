@@ -87,35 +87,25 @@ pnpm storybook
 
 > Chromatic nos permite detectar y corregir problemas visuales en nuestra librería, lo que garantiza una experiencia de usuario consistente y de alta calidad.
 
-### Configuración
+- #### Paso 1: Inicia sesión con Chromatic 
 
-- #### Paso 1: Instalación 
+[inicia sesión en Chromatic](https://www.chromatic.com/start?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook) utilizando las credenciales proporcionadas.
 
-Agrega el paquete como una dependencia de desarrollo.
+- #### Paso 2: Buscar el proyecto deseado
 
-```bash
-yarn add -D chromatic
-```
+Una vez que hayas iniciado sesión, busca el proyecto deseado en la lista de proyectos creados en Chromatic.
 
-- #### Paso 2: Inicia sesión con Chromatic 
+- #### Paso 3: Explorar builds y componentes
 
-Una vez que el paquete esté instalado, [inicia sesión con Chromatic](https://www.chromatic.com/start?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook) con tu cuenta de GitHub (Chromatic solo solicitará permisos muy ligeros), luego crearemos un nuevo proyecto que se llama "uikit" y lo sincronizaremos con el repositorio de GitHub que hemos configurado.
+Dentro del proyecto seleccionado, encontrarás una lista de builds creados a partir de diferentes ramas del repositorio. Cada build representa una versión del proyecto en un estado específico.
 
-Haz click en `Choose GitHub repo` abajo de colaboradores y selecciona tu repositorio.
+Selecciona el build deseado para ver los componentes disponibles en esa versión. Dentro de cada build, encontrarás una lista de componentes con la opción de verlos en Storybook.
 
-- #### Paso 3: Ejecutar Chromatic
+Haz clic en el botón correspondiente para acceder a Storybook y explorar los componentes en el contexto del build seleccionado.
 
-Copia el `project-token` único que se generó para tu proyecto. Después ejecútala con el siguiente comando para construir e implementar nuestro Storybook. Asegúrate de reemplazar `project-token` con su token de proyecto.
+## ¿Necesitas más información sobre el despliegue?
 
-```bash
-yarn chromatic --project-token=<project-token>
-```
-
-Cuando termines, vas a recibir un enlace `https://random-uuid.chromatic.com` a tu Storybook publicado.
-
-## Integración con CI/CD
-
-Si deseas integrar Chromatic en tu flujo de integración continua (CI) y despliegue continuo (CD), puedes seguir la [documentación de Chromatic sobre integración con CI/CD](https://storybook.js.org/tutorials/intro-to-storybook/react/es/deploy/) para obtener instrucciones detalladas sobre cómo hacerlo.
+Si necesitas más detalles sobre cómo desplegar tu proyecto te recomendamos visitar la [documentación de Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react/es/deploy/) para obtener instrucciones detalladas sobre cómo hacerlo.
 
 ## Tecnologías
 
