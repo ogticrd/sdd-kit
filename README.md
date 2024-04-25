@@ -83,6 +83,29 @@ cd sdd-kit
 pnpm install
 pnpm storybook
 ```
+## Uso de Chromatic
+
+> Chromatic nos permite detectar y corregir problemas visuales en nuestra librería, lo que garantiza una experiencia de usuario consistente y de alta calidad.
+
+- #### Paso 1: Inicia sesión con Chromatic 
+
+[inicia sesión en Chromatic](https://www.chromatic.com/start?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook) utilizando las credenciales proporcionadas.
+
+- #### Paso 2: Buscar el proyecto deseado
+
+Una vez que hayas iniciado sesión, busca el proyecto deseado en la lista de proyectos creados en Chromatic.
+
+- #### Paso 3: Explorar builds y componentes
+
+Dentro del proyecto seleccionado, encontrarás una lista de builds creados a partir de diferentes ramas del repositorio. Cada build representa una versión del proyecto en un estado específico.
+
+Selecciona el build deseado para ver los componentes disponibles en esa versión. Dentro de cada build, encontrarás una lista de componentes con la opción de verlos en Storybook.
+
+Haz clic en el botón correspondiente para acceder a Storybook y explorar los componentes en el contexto del build seleccionado.
+
+## ¿Necesitas más información sobre el despliegue?
+
+Si necesitas más detalles sobre cómo desplegar tu proyecto te recomendamos visitar la [documentación de Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react/es/deploy/) para obtener instrucciones detalladas sobre cómo hacerlo.
 
 ## Tecnologías
 
@@ -100,4 +123,4 @@ pnpm storybook
 
 ## Información adicional
 
-Información de diseño [https://uxkit.digital.gob.do/](https://uxkit.digital.gob.do/)
+Información de diseño: [https://uxkit.digital.gob.do/](https://uxkit.digital.gob.do/)
