@@ -17,6 +17,6 @@ export const playground: Story = {
     variant: "filled",
     color: "primary",
     size: "medium",
-    label: "Example",
+    label: "Ejemplo",
   },
 };

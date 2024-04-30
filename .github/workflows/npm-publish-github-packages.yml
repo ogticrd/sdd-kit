@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Publish Package to npmjs
 
 on:
   release:
@@ -33,18 +33,21 @@ jobs:
       - name: Build project with pnpm
         run: pnpm rollup-build-lib
 
-  publish-gpr:
+  publish-npm:
     needs: build-lib
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 16
+        uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: https://npm.pkg.github.com/
+          registry-url: https://registry.npmjs.org/
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

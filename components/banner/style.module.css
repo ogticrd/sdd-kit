@@ -1,0 +1,23 @@
+.banner {
+  display: flex;
+}
+
+.img {
+  height: 100%;
+}
+
+.children {
+  width: auto;
+  height: 100%;
+  padding: 25px;
+}
+
+@media only screen and (max-width: 800px) {
+  .img {
+    display: none;
+  }
+
+  .children {
+    width: 100%;
+  }
+}

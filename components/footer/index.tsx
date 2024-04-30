@@ -24,6 +24,8 @@ export interface IFooterProps {
     email?: string;
   },
   logo?: string;
+  logoAllRightsReserved?: string;
+  logoAllRightsReservedWidth?: string;
   social?: {
     facebook?: string;
     youtube?: string;
@@ -41,7 +43,7 @@ export interface IFooterProps {
 
 export const FooterContent = ({ children }: IFooterInternalProps) => {
   return (
-    <Box style={{ padding: "75px 25px", background: theme.palette.primary.main }}>
+    <div style={{ padding: "75px 25px", background: theme.palette.primary.main }}>
       <div
         style={{
           width: "100%",
@@ -52,7 +54,7 @@ export const FooterContent = ({ children }: IFooterInternalProps) => {
       >
         {children}
       </div>
-    </Box>
+    </div>
   )
 }
 
@@ -74,7 +76,6 @@ export const FooterBottom = ({ children }: IFooterInternalProps) => {
 }
 
 export const Footer = (props: IFooterProps) => {
-
 
   return (
     <div>
@@ -152,9 +153,9 @@ export const Footer = (props: IFooterProps) => {
               </Typography>
               <img
                 style={{ marginLeft: "5px", cursor: "pointer" }}
-                src={props.logo || "https://b2368105.smushcdn.com/2368105/wp-content/uploads/2021/06/logo.png?lossy=0&strip=1&webp=1"}
+                src={props.logoAllRightsReserved || "https://b2368105.smushcdn.com/2368105/wp-content/uploads/2021/06/logo.png?lossy=0&strip=1&webp=1"}
                 alt="logo institucion"
-                width="55"
+                width={props.logoAllRightsReservedWidth ? props.logoAllRightsReservedWidth : "55px"}
                 onClick={() => window.open("/")}
               />
             </div>

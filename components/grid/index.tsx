@@ -29,18 +29,22 @@ export const GridContainer = ({
 
 export interface IPropsItem {
   children?: React.ReactNode;
+  xs?: number;
   sm?: number;
   md?: number;
   lg?: number;
+  xl?: number;
 }
 
 export const GridItem = ({
   children,
+  xs = 12,
   sm = 12,
   md = 6,
   lg = 4,
+  xl,
 }: IPropsItem) => (
-  <Grid item sm={sm} md={md} lg={lg}>
+  <Grid item xs={xs} sm={sm} md={md} lg={lg} xl={xl}>
     {children}
   </Grid>
 );

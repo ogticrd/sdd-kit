@@ -32,7 +32,21 @@ Ahora, utiliza npm para instalar `@ogticrd/ui-kit`
 npm install @ogticrd/ui-kit
 ```
 
-- #### Paso 3: Importar y utilizar la librería en tu aplicación
+- #### Paso 3: Incluir el provider en el archivo raiz
+Con el fin de disponer de la configuración de los temas y los estilos pertinentes dentro del proyecto, se debe agregar la configuracion del **ThemeProvider** en el archivo raiz. Ej:``_app.ts``, ``app.js``, ``layout.js``, etc.
+
+```tsx
+import { ThemeProvider } from '@ogticrd/ui-kit'
+...
+ <ThemeProvider>
+    <body> 
+        {children}
+    </body>
+</ThemeProvider>
+...
+```
+
+- #### Paso 4: Importar y utilizar la librería en tu aplicación
 
 Abre el archivo donde deseas utilizar la librería. Importa la librería al principio del archivo:
 
@@ -42,7 +56,7 @@ import Button from '@ogticrd/ui-kit/Button';
 
 Luego, puedes utilizar los componentes o funciones proporcionadas por la librería en tu aplicación:
 
-```bash
+```jsx
 import Button from '@ogticrd/ui-kit/Button';
 
 function MiComponente() {
@@ -59,7 +73,7 @@ function MiComponente() {
 export default MiComponente;
 ```
 
-- #### Paso 4: Ejecutar la aplicación
+- #### Paso 5: Ejecutar la aplicación
 
 Guarda tus cambios y ejecuta la aplicación:
 
@@ -83,6 +97,29 @@ cd sdd-kit
 pnpm install
 pnpm storybook
 ```
+## Uso de Chromatic
+
+> Chromatic nos permite detectar y corregir problemas visuales en nuestra librería, lo que garantiza una experiencia de usuario consistente y de alta calidad.
+
+- #### Paso 1: Inicia sesión con Chromatic 
+
+[inicia sesión en Chromatic](https://www.chromatic.com/start?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook) utilizando las credenciales proporcionadas.
+
+- #### Paso 2: Buscar el proyecto deseado
+
+Una vez que hayas iniciado sesión, busca el proyecto deseado en la lista de proyectos creados en Chromatic.
+
+- #### Paso 3: Explorar builds y componentes
+
+Dentro del proyecto seleccionado, encontrarás una lista de builds creados a partir de diferentes ramas del repositorio. Cada build representa una versión del proyecto en un estado específico.
+
+Selecciona el build deseado para ver los componentes disponibles en esa versión. Dentro de cada build, encontrarás una lista de componentes con la opción de verlos en Storybook.
+
+Haz clic en el botón correspondiente para acceder a Storybook y explorar los componentes en el contexto del build seleccionado.
+
+## ¿Necesitas más información sobre el despliegue?
+
+Si necesitas más detalles sobre cómo desplegar tu proyecto te recomendamos visitar la [documentación de Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react/es/deploy/) para obtener instrucciones detalladas sobre cómo hacerlo.
 
 ## Tecnologías
 
@@ -100,4 +137,4 @@ pnpm storybook
 
 ## Información adicional
 
-Información de diseño [https://uxkit.digital.gob.do/](https://uxkit.digital.gob.do/)
+Información de diseño: [https://uxkit.digital.gob.do/](https://uxkit.digital.gob.do/)
