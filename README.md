@@ -126,6 +126,8 @@ Si necesitas más detalles sobre cómo desplegar tu proyecto te recomendamos vis
 - Lenguaje: [TypeScript](https://www.typescriptlang.org/)
 - Framework: [React](https://react.dev/)
 - UI Framework: [MUI](https://mui.com/)
+- CSS framework: [Tailwind CSS](https://tailwindcss.com/)
+- UI Component: [Storybook](https://storybook.js.org/)
 
 ## Autor/es
 
