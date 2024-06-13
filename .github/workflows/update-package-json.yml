@@ -1,4 +1,4 @@
-name: Node.js Update Package-json version 
+name: Node.js Update package.json version
 
 on:
   release:
@@ -14,16 +14,21 @@ jobs:
       # Extract tag version from release event payload
       - name: Extract tag version
         id: extract-tag
-        run: echo "::set-output name=tag_version::${GITHUB_REF#refs/tags/}"
+        run: echo "tag_version=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
 
       # Update package.json version
       - name: Update package version
         run: |
-          TAG_VERSION=${{ steps.extract-tag.outputs.tag_version }}
+          TAG_VERSION=${{ env.tag_version }}
           jq ".version = \"$TAG_VERSION\"" package.json > temp.json
           mv temp.json package.json
+
+      # Commit and push changes
+      - name: Commit and push version bump
+        run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
           git commit -am "Bump version to $TAG_VERSION [skip ci]"
+          git push origin HEAD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
