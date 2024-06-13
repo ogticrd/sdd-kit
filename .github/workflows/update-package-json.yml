@@ -10,7 +10,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      
+        with:
+          ref: ${{ github.ref_name }}
+
       # Extract tag version from release event payload
       - name: Extract tag version
         id: extract-tag
@@ -29,6 +31,6 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
           git commit -am "Bump version to $TAG_VERSION [skip ci]"
-          git push origin HEAD
+          git push origin HEAD:${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
