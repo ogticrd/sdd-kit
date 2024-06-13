@@ -10,8 +10,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          ref: ${{ github.ref_name }}
 
       # Extract tag version from release event payload
       - name: Extract tag version
