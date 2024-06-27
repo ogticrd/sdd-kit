@@ -14,3 +14,4 @@ export * from "./tabs";
 export * from "./textField";
 export * from "./typography";
 export * from "./links-of-interest";
+export * from "./image";
