@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 export interface ILoadingBackdropProps {
   text?: string;

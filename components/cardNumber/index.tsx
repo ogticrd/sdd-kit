@@ -1,14 +1,13 @@
-import * as React from 'react';
+import React from 'react';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { theme } from '../../theme';
 
-export interface ICardProps {
+export interface ICardNumberProps {
   number: string;
   description: string;
 }
 
-export const CardNumber = ({ number, description }: ICardProps) => {
+export const CardNumber = ({ number, description }: ICardNumberProps) => {
   return (
     <div style={{ minWidth: 275, borderRadius: "5px", background: "#0066cc" }}>
       <CardContent>

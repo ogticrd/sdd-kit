@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import MUIBox from '@mui/material/Box';
 
-export interface IPropsContainer {
+export interface IBoxProps {
   children: React.ReactNode;
 }
 
-export const Box = ({ children }: IPropsContainer) => {
+export const Box = ({ children }: IBoxProps) => {
 
   return (
     <MUIBox>

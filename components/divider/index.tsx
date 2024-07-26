@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import MUIDivider from '@mui/material/Divider';
 
 export interface IDividerProps {

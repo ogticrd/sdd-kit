@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Menu } from "../components/menu";
+import { Downloads } from "../components/downloads";
 
 const meta = {
-  title: "Example/Menu",
+  title: "Example/Downloads",
   tags: ["autodocs"],
-  component: Menu,
-} satisfies Meta<typeof Menu>;
+  component: Downloads,
+} satisfies Meta<typeof Downloads>;
 
 export default meta;
 

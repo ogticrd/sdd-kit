@@ -1,25 +1,17 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import MUIDrawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 
-export interface IPropsDrawer {
+type Anchor = 'top' | 'left' | 'bottom' | 'right';
+
+export interface IDrawerProps {
   anchor: Anchor;
   children: React.ReactNode;
 }
 
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
-
-export const Drawer = ({ children, anchor }: IPropsDrawer) => {
-  const [state, setState] = React.useState({
+export const Drawer = ({ children, anchor }: IDrawerProps) => {
+  const [state, setState] = useState({
     top: false,
     left: false,
     bottom: false,
@@ -52,19 +44,15 @@ export const Drawer = ({ children, anchor }: IPropsDrawer) => {
   );
 
   return (
-    <div>
-      {/* {(['left', 'right', 'top', 'bottom'] as const).map((anchor) => ( */}
-      <React.Fragment key={anchor}>
-        <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-        <MUIDrawer
-          anchor={anchor}
-          open={state[anchor]}
-          onClose={toggleDrawer(anchor, false)}
-        >
-          {list(anchor)}
-        </MUIDrawer>
-      </React.Fragment>
-      {/* ))} */}
+    <div key={anchor}>
+      <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+      <MUIDrawer
+        anchor={anchor}
+        open={state[anchor]}
+        onClose={toggleDrawer(anchor, false)}
+      >
+        {list(anchor)}
+      </MUIDrawer>
     </div>
   );
 }

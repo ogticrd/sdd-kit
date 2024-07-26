@@ -1,19 +1,27 @@
-import * as React from 'react';
+import React, { MouseEvent, useState } from 'react';
 import Button from '@mui/material/Button';
 import MUIMenu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-export interface IPropsMenu {
+export interface IMenuItem {
   name: string;
-  items: any[];
+  onClick?: () => void;
 }
 
-export const Menu = ({ name, items = [] }: IPropsMenu) => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+export interface IMenuProps {
+  name: string;
+  items: IMenuItem[];
+}
+
+export const Menu = ({ name, items = [] }: IMenuProps) => {
+
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+
+  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -39,10 +47,17 @@ export const Menu = ({ name, items = [] }: IPropsMenu) => {
         }}
       >
         {items &&
-          items.map((item: any, index: number) => (
-            <MenuItem key={index} onClick={handleClose}>{item.name}</MenuItem>
-          ))
-        }
+          items.map((item: IMenuItem, index: number) => (
+            <MenuItem
+              key={index}
+              onClick={() => {
+                handleClose();
+                if (item.onClick) item.onClick();
+              }}
+            >
+              {item.name}
+            </MenuItem>
+          ))}
       </MUIMenu>
     </div >
   );

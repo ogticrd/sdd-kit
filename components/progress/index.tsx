@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 
-interface IProgressProps {
+export interface IProgressProps {
   value: number;
 }
 

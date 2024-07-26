@@ -1,21 +1,16 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
+import React, { useState } from 'react';
 import MUISnackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-export interface IPropsSnackbar {
+export interface ISnackbarProps {
   openMessage: boolean;
   message: string;
   autoHideDuration?: number;
 }
 
-export const Snackbar = ({ openMessage = true, message, autoHideDuration }: IPropsSnackbar) => {
-  const [open, setOpen] = React.useState(openMessage);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
+export const Snackbar = ({ openMessage = true, message, autoHideDuration }: ISnackbarProps) => {
+  const [open, setOpen] = useState(openMessage);
 
   const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {

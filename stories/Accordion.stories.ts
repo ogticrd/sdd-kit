@@ -1,8 +1,8 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Accordion } from "../components/accordion";
-import React from "react";
-import { Button } from "../components";
+import { Button } from "../components/button";
 
 const meta = {
   title: "Example/Accordion",

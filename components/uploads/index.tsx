@@ -1,5 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
+
 import { Typography } from '../typography';
 import { Button } from '../button';
 import { Divider } from '../divider';

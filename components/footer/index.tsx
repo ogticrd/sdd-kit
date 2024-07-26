@@ -1,19 +1,14 @@
-import * as React from 'react';
-
+import React from 'react';
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
-import { Box } from "@mui/material";
-
 import { GridContainer, GridItem } from "../grid";
 import { Typography } from "../typography";
 import { IconButton } from '../iconButton';
 
-import { theme } from "../../theme";
-
-interface IFooterInternalProps {
+export interface IFooterInternalProps {
   children: React.ReactNode;
 }
 
@@ -43,7 +38,7 @@ export interface IFooterProps {
 
 export const FooterContent = ({ children }: IFooterInternalProps) => {
   return (
-    <div style={{ padding: "75px 25px", background: theme.palette.primary.main }}>
+    <div style={{ padding: "75px 25px", background: "#003876" }}>
       <div
         style={{
           width: "100%",

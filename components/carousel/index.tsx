@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -7,12 +7,12 @@ import './styles.css';
 
 import { Autoplay, Pagination } from 'swiper/modules';
 
-export interface IPropsCarousel {
+export interface ICarouselProps {
   childrens: React.ReactNode[];
   delayAutoplay?: number;
 }
 
-export const Carousel = ({ childrens, delayAutoplay }: IPropsCarousel) => {
+export const Carousel = ({ childrens, delayAutoplay }: ICarouselProps) => {
   return (
     <Swiper
       autoplay={{
@@ -25,8 +25,8 @@ export const Carousel = ({ childrens, delayAutoplay }: IPropsCarousel) => {
       modules={[Autoplay, Pagination]}
       className="mySwiper"
     >
-      {childrens && childrens.map((children: any) => (
-        <SwiperSlide>{children}</SwiperSlide>
+      {childrens && childrens.map((children: any, index: number) => (
+        <SwiperSlide key={index}>{children}</SwiperSlide>
       ))}
     </Swiper>
   );
