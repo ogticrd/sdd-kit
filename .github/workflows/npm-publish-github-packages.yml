@@ -32,6 +32,8 @@ jobs:
         run: pnpm install
       - name: Build project with pnpm
         run: pnpm webpack-build-lib
+      - name: Verify build output
+        run: ls -la dist
     # Store the dist folder
       - uses: actions/upload-artifact@v3
         with:
