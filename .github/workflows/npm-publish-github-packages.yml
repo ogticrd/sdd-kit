@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build project with pnpm
-        run: pnpm rollup-build-lib
+        run: pnpm webpack-build-lib
 
   publish-npm:
     needs: build-lib
