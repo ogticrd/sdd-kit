@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { SearchBox } from "../components/searchbox";
+
 const meta = {
   title: "Example/SearchBox",
   tags: ["autodocs"],
@@ -9,8 +11,6 @@ const meta = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
-
-import SearchBox from "../components/searchbox";
 
 export const playground: Story = {
   args: {

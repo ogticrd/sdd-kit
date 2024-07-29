@@ -1,17 +1,16 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import MUISelect, { SelectChangeEvent } from '@mui/material/Select';
 
-
-interface ISelectOption {
+export interface ISelectOption {
     value: string;
     label: string;
 }
 
-interface ISelectProps {
+export interface ISelectProps {
     options: ISelectOption[];
     label: string;
     value: string;
@@ -19,7 +18,7 @@ interface ISelectProps {
 }
 
 export const Select = (props: ISelectProps) => {
-    const [value, setValue] = React.useState<string>(props.value);
+    const [value, setValue] = useState<string>(props.value);
 
     const handleChange = (event: SelectChangeEvent) => {
         setValue(event.target.value);

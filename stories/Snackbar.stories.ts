@@ -13,5 +13,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const playground: Story = {
-  args: {},
+  args: {
+    message: "Ejemplo",
+    openMessage: true,
+    autoHideDuration: 3000
+  },
 };

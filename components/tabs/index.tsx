@@ -1,16 +1,15 @@
-import * as React from 'react';
+import React, { SyntheticEvent, useState } from 'react';
 import MUITabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-interface TabPanelProps {
+export interface ITabPanel {
   children?: React.ReactNode;
   index: number;
   value: number;
 }
 
-function CustomTabPanel(props: TabPanelProps) {
+function CustomTabPanel(props: ITabPanel) {
   const { children, value, index, ...other } = props;
 
   return (
@@ -37,15 +36,15 @@ function a11yProps(index: number) {
   };
 }
 
-export interface TabsProps {
+export interface ITabsProps {
   titles: string[];
   children: any[];
 }
 
-export const Tabs = ({ titles, children }: TabsProps) => {
-  const [value, setValue] = React.useState(0);
+export const Tabs = ({ titles, children }: ITabsProps) => {
+  const [value, setValue] = useState(0);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
@@ -54,12 +53,12 @@ export const Tabs = ({ titles, children }: TabsProps) => {
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <MUITabs value={value} onChange={handleChange} aria-label="basic tabs example">
           {titles.map((title, index) => (
-            <Tab label={title} {...a11yProps(index)} />
+            <Tab key={index} label={title} {...a11yProps(index)} />
           ))}
         </MUITabs>
       </Box>
       {children.map((child, index) => (
-        <CustomTabPanel value={value} index={index}>
+        <CustomTabPanel key={index} value={value} index={index}>
           {child}
         </CustomTabPanel>
       ))}

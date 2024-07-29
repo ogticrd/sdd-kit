@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { IconButton, Link } from '@mui/material';
-import SearchBox from '../searchbox';
-import HeaderMenu from './menu';
-import LinksOfInterest from '../links-of-interest';
+import IconButton from '@mui/material/IconButton';
+
+import { SearchBox } from '../searchbox';
+import { HeaderMenu } from './menu';
+import { LinksOfInterest } from '../links-of-interest';
 
 export interface IMenuItem {
   name: string;
@@ -24,7 +25,7 @@ export interface IHeaderProps {
 
 export const Header = ({ logo, logoWidth, dark, menuItems, searchBox, customElements, customLinks }: IHeaderProps) => {
 
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className={`${dark ? 'bg-blue-900' : 'bg-white'}`} style={{ position: "absolute", width: "100%" }}>

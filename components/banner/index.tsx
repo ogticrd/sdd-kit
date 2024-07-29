@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React from 'react';
+
 import styles from './style.module.css'
 
-export interface IPropsBanner {
+export interface IBannerProps {
   img: any;
   widthImg?: string;
   heightBanner?: string;
@@ -9,7 +10,7 @@ export interface IPropsBanner {
   children: React.ReactNode;
 }
 
-export const Banner = ({ img, widthImg, heightBanner, direction, children }: IPropsBanner) => {
+export const Banner = ({ img, widthImg, heightBanner, direction, children }: IBannerProps) => {
 
   return (
     <div

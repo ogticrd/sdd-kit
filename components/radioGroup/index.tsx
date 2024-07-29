@@ -1,17 +1,17 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import Radio from '@mui/material/Radio';
 import MUIRadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
-interface IRadioOption {
+export interface IRadioOption {
   value: string;
   label: string;
   disabled?: boolean;
 }
 
-interface IRadioGroupProps {
+export interface IRadioGroupProps {
   options: IRadioOption[];
   label: string;
   value: string;
@@ -20,9 +20,9 @@ interface IRadioGroupProps {
 
 export const RadioGroup = (props: IRadioGroupProps) => {
 
-  const [value, setValue] = React.useState<string>(props.value);
+  const [value, setValue] = useState<string>(props.value);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setValue(props?.value);
     if (props?.value) props.onChange(props?.value);
 

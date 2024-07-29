@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import MUIStepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 
-export interface IPropsStepper {
+export interface IStepperProps {
   stepsName: string[];
   stepsContent: React.ReactNode[];
   stepBackDisabled?: boolean;
@@ -16,9 +16,9 @@ export interface IPropsStepper {
   labelFinish?: string;
 }
 
-export const Stepper = ({ stepsName, stepsContent, stepBackDisabled, stepNextDisabled, allStepsComplete, labelBack = "Atrás", labelNext = "Siguiente", labelFinish = "Finalizar" }: IPropsStepper) => {
-  const [activeStep, setActiveStep] = React.useState(0);
-  const [skipped, setSkipped] = React.useState(new Set<number>());
+export const Stepper = ({ stepsName, stepsContent, stepBackDisabled, stepNextDisabled, allStepsComplete, labelBack = "Atrás", labelNext = "Siguiente", labelFinish = "Finalizar" }: IStepperProps) => {
+  const [activeStep, setActiveStep] = useState(0);
+  const [skipped, setSkipped] = useState(new Set<number>());
 
   const isStepSkipped = (step: number) => {
     return skipped.has(step);
@@ -43,18 +43,18 @@ export const Stepper = ({ stepsName, stepsContent, stepBackDisabled, stepNextDis
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleSkip = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped((prevSkipped) => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
-  };
+  // const handleSkip = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  //   setSkipped((prevSkipped) => {
+  //     const newSkipped = new Set(prevSkipped.values());
+  //     newSkipped.add(activeStep);
+  //     return newSkipped;
+  //   });
+  // };
 
-  const handleReset = () => {
-    setActiveStep(0);
-  };
+  // const handleReset = () => {
+  //   setActiveStep(0);
+  // };
 
   return (
     <Box sx={{ width: '100%' }}>

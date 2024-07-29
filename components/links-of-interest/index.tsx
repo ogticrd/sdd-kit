@@ -10,14 +10,15 @@ import Logo911 from '../../stories/assets/icons/911.png'
 import DominicanaGOB from '../../stories/assets/icons/dominicana-gob.png'
 import Ogtic from '../../stories/assets/icons/ogtic.jpeg'
 
-export default function LinksOfInterest({ dark = false }: { dark?: boolean }) {
+export interface ILinkInterestItem {
+    name: string;
+    path: string;
+    category: string;
+    icon: string;
+}
 
-    interface ILinkInterestItem {
-        name: string;
-        path: string;
-        category: string;
-        icon: string;
-    }
+export const LinksOfInterest = ({ dark = false }: { dark?: boolean }) => {
+
 
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 

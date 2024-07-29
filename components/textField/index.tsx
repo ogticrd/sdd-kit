@@ -1,7 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import MUITextField from '@mui/material/TextField';
-import { FormHelperText } from '@mui/material';
-import { theme } from '../../theme';
+import FormHelperText from '@mui/material/FormHelperText';
 
 export interface ITextFieldProps {
   id: string;
@@ -16,7 +15,7 @@ export interface ITextFieldProps {
 export const TextField = ({ id, label, variant = 'outlined', color, error = false, helperText, args = {} }: ITextFieldProps) => {
   console.log(args);
   return (
-    <>
+    <div>
       <MUITextField
         id={id}
         label={label}
@@ -25,9 +24,9 @@ export const TextField = ({ id, label, variant = 'outlined', color, error = fals
         error={error}
         {...args}
       />
-      <FormHelperText sx={{ color: error ? theme.palette.secondary.main : "gray" }}>
+      <FormHelperText sx={{ color: error ? "#EE2A24" : "gray" }}>
         {helperText}
       </FormHelperText>
-    </>
+    </div>
   );
 }

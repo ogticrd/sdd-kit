@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import MUIIconButton from '@mui/material/IconButton';
 
-export interface IPropsIconButton {
+export interface IIconButtonProps {
   color?: 'info' | 'success' | 'warning' | 'error' | 'primary'
   children: any;
 }
@@ -9,7 +9,7 @@ export interface IPropsIconButton {
 export const IconButton = ({
   color = 'primary',
   children
-}: IPropsIconButton) => {
+}: IIconButtonProps) => {
   return (
     <MUIIconButton color={color}>
       {children}

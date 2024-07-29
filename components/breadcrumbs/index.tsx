@@ -1,23 +1,24 @@
-import * as React from 'react';
-import Typography from '@mui/material/Typography';
+import React from 'react';
 import MUIBreadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 
-export interface IPropsBreadcrumbs {
-  links: ILinks[];
-}
-
-interface ILinks {
+export interface IBreadcrumbsChildren {
   name: string;
   link: string;
 }
 
-function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-  event.preventDefault();
-  console.info('You clicked a breadcrumb.');
+export interface IBreadcrumbsProps {
+  links: IBreadcrumbsChildren[];
 }
 
-export const Breadcrumbs = ({ links = [] }: IPropsBreadcrumbs) => {
+
+export const Breadcrumbs = ({ links = [] }: IBreadcrumbsProps) => {
+
+  function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    event.preventDefault();
+    console.info('You clicked a breadcrumb.');
+  }
+
   return (
     <div role="presentation" onClick={handleClick}>
       <MUIBreadcrumbs aria-label="breadcrumb">
