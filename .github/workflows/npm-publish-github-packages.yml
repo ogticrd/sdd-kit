@@ -32,6 +32,11 @@ jobs:
         run: pnpm install
       - name: Build project with pnpm
         run: pnpm webpack-build-lib
+    # Store the dist folder
+      - uses: actions/upload-artifact@v3
+        with:
+          name: app-build
+          path: dist
 
   publish-npm:
     needs: build-lib
@@ -48,9 +53,11 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      # Add step to verify the build output before publishing
-      - name: Verify build output
-        run: ls -la dist
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: app-build
+      - run: ls dist
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
