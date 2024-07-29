@@ -2,13 +2,13 @@ import React, { useEffect } from 'react'
 import AppsIcon from '@mui/icons-material/Apps';
 import CloseIcon from '@mui/icons-material/Close';
 
-import Cupula from '../../stories/assets/icons/cupula.png'
-import GobDO from '../../stories/assets/icons/gob-do.png'
-import ObservatorioMap from '../../stories/assets/icons/observatorio-map.jpeg'
-import Logo311 from '../../stories/assets/icons/311.png'
-import Logo911 from '../../stories/assets/icons/911.png'
-import DominicanaGOB from '../../stories/assets/icons/dominicana-gob.png'
-import Ogtic from '../../stories/assets/icons/ogtic.jpeg'
+const Cupula = '../../stories/assets/icons/cupula.png'
+const GobDO = '../../stories/assets/icons/gob-do.png'
+const ObservatorioMap = '../../stories/assets/icons/observatorio-map.jpeg'
+const Logo311 = '../../stories/assets/icons/311.png'
+const Logo911 = '../../stories/assets/icons/911.png'
+const DominicanaGOB = '../../stories/assets/icons/dominicana-gob.png'
+const Ogtic = '../../stories/assets/icons/ogtic.jpeg'
 
 export interface ILinkInterestItem {
     name: string;
@@ -27,75 +27,75 @@ export const LinksOfInterest = ({ dark = false }: { dark?: boolean }) => {
             name: 'Construcción',
             path: 'https://construccion.com',
             category: 'Ventanilla',
-            icon: Cupula.src
+            icon: Cupula
         },
         {
             name: 'Inversión',
             path: 'https://inversion.com',
             category: 'Ventanilla',
-            icon: Cupula.src
+            icon: Cupula
         },
         {
             name: 'Educación',
             path: 'https://educacion.com',
             category: 'Ventanilla',
-            icon: Cupula.src
+            icon: Cupula
         },
         {
             name: 'Servicios GOB',
             path: 'https://serviciosgob.com',
             category: 'Portales',
-            icon: GobDO.src
+            icon: GobDO
         }, {
             name: 'Observatorio MAP',
             path: 'https://serviciosgob.com',
             category: 'Portales',
-            icon: ObservatorioMap.src
+            icon: ObservatorioMap
         }, {
             name: '311',
             path: 'https://serviciosgob.com',
             category: 'Portales',
-            icon: Logo311.src
+            icon: Logo311
         }, {
             name: '911',
             path: 'https://serviciosgob.com',
             category: 'Portales',
-            icon: Logo911.src
+            icon: Logo911
         }, {
             name: 'Mejora Regulatoria',
             path: 'https://serviciosgob.com',
             category: 'Portales',
-            icon: Cupula.src
+            icon: Cupula
         }, {
             name: 'E-ticket',
             path: 'https://serviciosgob.com',
             category: 'Portales',
-            icon: Cupula.src
+            icon: Cupula
         }, {
             name: 'Beca tu Futuro',
             path: 'https://serviciosgob.com',
             category: 'Portales',
-            icon: Cupula.src
+            icon: Cupula
         }, {
             name: 'Dominicana GOB',
             path: 'https://serviciosgob.com',
             category: 'Portales',
-            icon: DominicanaGOB.src
+            icon: DominicanaGOB
         }, {
             name: 'MINPRE',
             path: 'https://minpre.com',
             category: 'Instituciones',
-            icon: Cupula.src
+            icon: Cupula
         }, {
             name: 'OGTIC',
             path: 'https://minpre.com',
             category: 'Instituciones',
-            icon: Ogtic.src
+            icon: Ogtic
         }, {
             name: 'MAP',
             path: 'https://minpre.com',
             category: 'Instituciones',
-            icon: Cupula.src
+            icon: Cupula
         },
     ]
 
