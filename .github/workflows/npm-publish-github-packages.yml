@@ -48,6 +48,9 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
+      # Add step to verify the build output before publishing
+      - name: Verify build output
+        run: ls -la dist
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
