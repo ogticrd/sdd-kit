@@ -60,6 +60,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: app-build
+          path: dist
       - run:  ls -R
       - run: npm publish
         env:
