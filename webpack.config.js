@@ -10,34 +10,44 @@ module.exports = {
     libraryTarget: 'umd',
     umdNamedDefine: true,
     globalObject: 'this',
+    assetModuleFilename: 'assets/images/[name].[ext]'
   },
   externals: [nodeExternals()],
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
         exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react'],
+            },
+          },
+          'ts-loader',
+        ],
       },
       {
-        test: /\.js$/, 
-        exclude: /node_modules/, 
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
-              name: '[path][name].[ext]',
+              limit: 25000,
+              name: '[name].[ext]',
               outputPath: 'assets/images',
-              publicPath: 'assets/images',
+              publicPath: '/assets/images',
             },
           },
         ],
@@ -46,9 +56,9 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
-    ]
+    ],
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
-  }
+  },
 };
