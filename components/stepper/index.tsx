@@ -5,7 +5,7 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 
-export interface IStepperProps {
+export interface StepperProps {
   stepsName: string[];
   stepsContent: React.ReactNode[];
   stepBackDisabled?: boolean;
@@ -16,7 +16,7 @@ export interface IStepperProps {
   labelFinish?: string;
 }
 
-export const Stepper = ({ stepsName, stepsContent, stepBackDisabled, stepNextDisabled, allStepsComplete, labelBack = "Atrás", labelNext = "Siguiente", labelFinish = "Finalizar" }: IStepperProps) => {
+export const Stepper = ({ stepsName, stepsContent, stepBackDisabled, stepNextDisabled, allStepsComplete, labelBack = "Atrás", labelNext = "Siguiente", labelFinish = "Finalizar" }: StepperProps) => {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set<number>());
 

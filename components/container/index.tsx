@@ -1,7 +1,7 @@
 import React from 'react';
 import MUIContainer from '@mui/material/Container';
 
-export interface IContainerProps {
+export interface ContainerProps {
   children: React.ReactNode;
   maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 }
@@ -9,7 +9,7 @@ export interface IContainerProps {
 export const Container = ({
   children,
   maxWidth = 'lg',
-}: IContainerProps) => {
+}: ContainerProps) => {
 
   return (
     <MUIContainer maxWidth={maxWidth}>

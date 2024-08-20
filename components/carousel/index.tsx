@@ -7,12 +7,12 @@ import './styles.css';
 
 import { Autoplay, Pagination } from 'swiper/modules';
 
-export interface ICarouselProps {
+export interface CarouselProps {
   childrens: React.ReactNode[];
   delayAutoplay?: number;
 }
 
-export const Carousel = ({ childrens, delayAutoplay }: ICarouselProps) => {
+export const Carousel = ({ childrens, delayAutoplay }: CarouselProps) => {
   return (
     <Swiper
       autoplay={{

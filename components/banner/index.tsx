@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './style.module.css'
 
-export interface IBannerProps {
+export interface BannerProps {
   img: any;
   widthImg?: string;
   heightBanner?: string;
@@ -10,7 +10,7 @@ export interface IBannerProps {
   children: React.ReactNode;
 }
 
-export const Banner = ({ img, widthImg, heightBanner, direction, children }: IBannerProps) => {
+export const Banner = ({ img, widthImg, heightBanner, direction, children }: BannerProps) => {
 
   return (
     <div

@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 
-export interface IGridContainerProps {
+export interface GridContainerProps {
   children: React.ReactNode;
   spacing?: number;
   direction?: 'row' | 'row-reverse' | 'column' | 'column' | 'column-reverse';
@@ -15,7 +15,7 @@ export const GridContainer = ({
   direction,
   justifyContent,
   alignItems,
-}: IGridContainerProps) => (
+}: GridContainerProps) => (
   <Grid
     container
     spacing={spacing ? spacing : 0}
@@ -27,7 +27,7 @@ export const GridContainer = ({
   </Grid>
 );
 
-export interface IGridProps {
+export interface GridProps {
   children?: React.ReactNode;
   xs?: number;
   sm?: number;
@@ -43,7 +43,7 @@ export const GridItem = ({
   md = 6,
   lg = 4,
   xl,
-}: IGridProps) => (
+}: GridProps) => (
   <Grid item xs={xs} sm={sm} md={md} lg={lg} xl={xl}>
     {children}
   </Grid>

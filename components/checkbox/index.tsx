@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import MUICheckbox from '@mui/material/Checkbox';
 
-export interface ICheckboxProps {
+export interface CheckboxProps {
   checked: boolean;
   onChange: (val: boolean) => void;
 }
 
-export const Checkbox = ({ checked, onChange }: ICheckboxProps) => {
+export const Checkbox = ({ checked, onChange }: CheckboxProps) => {
 
   const [value, setValue] = useState<boolean>(checked);
 

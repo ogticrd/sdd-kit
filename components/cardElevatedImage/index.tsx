@@ -2,13 +2,13 @@ import React from 'react';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
-export interface ICardElevatedImageProps {
+export interface CardElevatedImageProps {
   title?: string;
   img?: string;
   description?: string;
 }
 
-export const CardElevatedImage = ({ title, img, description }: ICardElevatedImageProps) => {
+export const CardElevatedImage = ({ title, img, description }: CardElevatedImageProps) => {
   return (
     <div style={{ minWidth: 275, boxShadow: "0px 3px 6px #f3f3f3", borderRadius: "5px", background: "white" }}>
       {img &&

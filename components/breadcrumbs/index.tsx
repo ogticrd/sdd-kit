@@ -2,17 +2,17 @@ import React from 'react';
 import MUIBreadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 
-export interface IBreadcrumbsChildren {
+export interface BreadcrumbsChildren {
   name: string;
   link: string;
 }
 
-export interface IBreadcrumbsProps {
-  links: IBreadcrumbsChildren[];
+export interface BreadcrumbsProps {
+  links: BreadcrumbsChildren[];
 }
 
 
-export const Breadcrumbs = ({ links = [] }: IBreadcrumbsProps) => {
+export const Breadcrumbs = ({ links = [] }: BreadcrumbsProps) => {
 
   function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     event.preventDefault();

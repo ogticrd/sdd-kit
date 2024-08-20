@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import MUIPagination from '@mui/material/Pagination';
 
-export interface IPaginationProps {
+export interface PaginationProps {
   color?: 'primary' | 'secondary' | 'standard';
   currentPage: number;
   totalPages: number;
@@ -16,7 +16,7 @@ export const Pagination = ({
   onChange,
   shape = 'rounded',
   variant = 'text',
-}: IPaginationProps) => {
+}: PaginationProps) => {
 
   const [currentPage, setCurrentPage] = useState(1);
 

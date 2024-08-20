@@ -5,11 +5,11 @@ import { Typography } from '../typography';
 import { Button } from '../button';
 import { Divider } from '../divider';
 
-export interface IUploadsProps {
+export interface UploadsProps {
   handleFileChange: any
 }
 
-export const Uploads = ({ handleFileChange }: IUploadsProps) => {
+export const Uploads = ({ handleFileChange }: UploadsProps) => {
 
   const handlePicture = () => {
     document.querySelector<any>('#fileSelector').click()

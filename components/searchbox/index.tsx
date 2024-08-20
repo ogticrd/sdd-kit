@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 
-export interface ISearchBoxProps {
+export interface SearchBoxProps {
     onSearch: (value: string) => void;
     fullWidth?: boolean;
 }
 
-export const SearchBox = ({ onSearch, fullWidth }: ISearchBoxProps) => {
+export const SearchBox = ({ onSearch, fullWidth }: SearchBoxProps) => {
 
     const [searchValue, setSearchValue] = useState('');
 

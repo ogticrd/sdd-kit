@@ -7,23 +7,23 @@ import { SearchBox } from '../searchbox';
 import { HeaderMenu } from './menu';
 import { LinksOfInterest } from '../links-of-interest';
 
-export interface IMenuItem {
+export interface MenuItemProps {
   name: string;
   path: string;
   external?: boolean;
-  children?: IMenuItem[];
+  children?: MenuItemProps[];
 }
-export interface IHeaderProps {
+export interface HeaderProps {
   logo: any;
   logoWidth?: number;
   dark?: boolean;
-  menuItems?: IMenuItem[];
+  menuItems?: MenuItemProps[];
   searchBox?: { onSeach: (value: string) => void };
   customElements?: React.ReactNode[];
   customLinks?: React.ReactNode[];
 }
 
-export const Header = ({ logo, logoWidth, dark, menuItems, searchBox, customElements, customLinks }: IHeaderProps) => {
+export const Header = ({ logo, logoWidth, dark, menuItems, searchBox, customElements, customLinks }: HeaderProps) => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

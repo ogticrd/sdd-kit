@@ -2,14 +2,14 @@ import React from 'react';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
-export interface ICardImageProps {
+export interface CardImageProps {
   title?: string;
   img?: string;
   subTitle?: string;
   children?: any;
 }
 
-export const CardImage = ({ title, img, subTitle, children }: ICardImageProps) => {
+export const CardImage = ({ title, img, subTitle, children }: CardImageProps) => {
   return (
     <div style={{ minWidth: 275, border: "2px solid #0087FF", borderRadius: "5px", background: "white" }}>
       {img &&

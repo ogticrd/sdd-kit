@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 
-export interface ITableColumn {
+export interface TableColumn {
   id: string;
   label: string;
   minWidth?: number;
@@ -20,12 +20,12 @@ export interface Data {
   [key: string]: string | number | React.ReactNode;
 }
 
-export interface ITableProps {
-  columns: readonly ITableColumn[];
+export interface TableProps {
+  columns: readonly TableColumn[];
   rows: Data[];
 }
 
-export const Table = ({ columns, rows }: ITableProps) => {
+export const Table = ({ columns, rows }: TableProps) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 

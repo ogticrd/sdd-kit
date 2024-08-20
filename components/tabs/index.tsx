@@ -3,13 +3,13 @@ import MUITabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 
-export interface ITabPanel {
+export interface TabPanel {
   children?: React.ReactNode;
   index: number;
   value: number;
 }
 
-function CustomTabPanel(props: ITabPanel) {
+function CustomTabPanel(props: TabPanel) {
   const { children, value, index, ...other } = props;
 
   return (
@@ -36,12 +36,12 @@ function a11yProps(index: number) {
   };
 }
 
-export interface ITabsProps {
+export interface TabsProps {
   titles: string[];
   children: any[];
 }
 
-export const Tabs = ({ titles, children }: ITabsProps) => {
+export const Tabs = ({ titles, children }: TabsProps) => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {

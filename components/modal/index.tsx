@@ -6,7 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-export interface IModalProps {
+export interface ModalProps {
   open: boolean;
   onClose: () => void;
   title: string;
@@ -23,7 +23,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-export const Modal = ({ open, onClose, title, children }: IModalProps) => {
+export const Modal = ({ open, onClose, title, children }: ModalProps) => {
   return (
     <BootstrapDialog
       onClose={onClose}

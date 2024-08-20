@@ -3,13 +3,13 @@ import MUISnackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-export interface ISnackbarProps {
+export interface SnackbarProps {
   openMessage: boolean;
   message: string;
   autoHideDuration?: number;
 }
 
-export const Snackbar = ({ openMessage = true, message, autoHideDuration }: ISnackbarProps) => {
+export const Snackbar = ({ openMessage = true, message, autoHideDuration }: SnackbarProps) => {
   const [open, setOpen] = useState(openMessage);
 
   const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
