@@ -5,12 +5,12 @@ import Button from '@mui/material/Button';
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
-export interface IDrawerProps {
+export interface DrawerProps {
   anchor: Anchor;
   children: React.ReactNode;
 }
 
-export const Drawer = ({ children, anchor }: IDrawerProps) => {
+export const Drawer = ({ children, anchor }: DrawerProps) => {
   const [state, setState] = useState({
     top: false,
     left: false,

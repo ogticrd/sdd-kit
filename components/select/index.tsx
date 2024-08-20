@@ -5,19 +5,19 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import MUISelect, { SelectChangeEvent } from '@mui/material/Select';
 
-export interface ISelectOption {
+export interface SelectOption {
     value: string;
     label: string;
 }
 
-export interface ISelectProps {
-    options: ISelectOption[];
+export interface SelectProps {
+    options: SelectOption[];
     label: string;
     value: string;
     onChange: (val: string) => void;
 }
 
-export const Select = (props: ISelectProps) => {
+export const Select = (props: SelectProps) => {
     const [value, setValue] = useState<string>(props.value);
 
     const handleChange = (event: SelectChangeEvent) => {
@@ -37,7 +37,7 @@ export const Select = (props: ISelectProps) => {
                     onChange={handleChange}
                 >
                     {
-                        (props.options || []).map((option: ISelectOption) => (
+                        (props.options || []).map((option: SelectOption) => (
                             <MenuItem key={option.value} value={option.value}>{option.label}</MenuItem>
                         ))
                     }

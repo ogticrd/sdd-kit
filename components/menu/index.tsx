@@ -3,17 +3,17 @@ import Button from '@mui/material/Button';
 import MUIMenu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-export interface IMenuItem {
+export interface MenuItemProps {
   name: string;
   onClick?: () => void;
 }
 
-export interface IMenuProps {
+export interface MenuProps {
   name: string;
-  items: IMenuItem[];
+  items: MenuItemProps[];
 }
 
-export const Menu = ({ name, items = [] }: IMenuProps) => {
+export const Menu = ({ name, items = [] }: MenuProps) => {
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -47,7 +47,7 @@ export const Menu = ({ name, items = [] }: IMenuProps) => {
         }}
       >
         {items &&
-          items.map((item: IMenuItem, index: number) => (
+          items.map((item: MenuItemProps, index: number) => (
             <MenuItem
               key={index}
               onClick={() => {

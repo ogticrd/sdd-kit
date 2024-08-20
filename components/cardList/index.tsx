@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from "../typography";
 
-export interface ICardListProps {
+export interface CardListProps {
   title?: string;
   subTitle?: string;
   image?: any;
@@ -9,7 +9,7 @@ export interface ICardListProps {
   tags?: string[];
 }
 
-export const CardList = ({ title, subTitle, image, status, tags = [] }: ICardListProps) => {
+export const CardList = ({ title, subTitle, image, status, tags = [] }: CardListProps) => {
   return (
     <div style={{
       background: "white",
@@ -25,7 +25,7 @@ export const CardList = ({ title, subTitle, image, status, tags = [] }: ICardLis
       }}>
         {image &&
           <div>
-            <img src={image} width={57} style={{ minWidth: '57px' }} />
+            <img src={image} width={57} alt="imagen" style={{ minWidth: '57px' }} />
           </div>
         }
 

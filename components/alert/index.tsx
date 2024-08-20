@@ -2,7 +2,7 @@ import React from 'react';
 import MUIAlert from '@mui/material/Alert';
 import { AlertTitle } from '@mui/material';
 
-export interface IAlertProps {
+export interface AlertProps {
   severity?: 'info' | 'success' | 'warning' | 'error'
   variant?: 'filled' | 'outlined' | 'standard';
   text: string;
@@ -14,7 +14,7 @@ export const Alert = ({
   variant = 'filled',
   text,
   title,
-}: IAlertProps) => {
+}: AlertProps) => {
 
   return (
     <MUIAlert variant={variant} severity={severity}>

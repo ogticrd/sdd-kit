@@ -4,24 +4,24 @@ import SaveAltOutlinedIcon from '@mui/icons-material/SaveAltOutlined';
 
 import { Typography } from '../typography'
 
-export interface IDownloadsItem {
+export interface DownloadsItem {
   name: string;
   onClick?: () => void;
 }
 
-export interface IDownloadsProps {
+export interface DownloadsProps {
   name: string;
-  items: IDownloadsItem[];
+  items: DownloadsItem[];
 }
 
-export const Downloads = ({ name, items = [] }: IDownloadsProps) => {
+export const Downloads = ({ name, items = [] }: DownloadsProps) => {
   return (
     <div>
       <Typography variant="body2" fontSize={16} fontWeight={700} gutterBottom>
         {name}
       </Typography>
       {items &&
-        items.map((item: IDownloadsItem, index: number) => (
+        items.map((item: DownloadsItem, index: number) => (
           <div key={index} onClick={item.onClick} style={{ width: "100%", display: "flex", alignItems: "center", cursor: "pointer", marginBottom: "5px" }}>
             <InsertDriveFileOutlinedIcon color="info" fontSize="small" style={{ marginRight: "10px" }} />
             <div style={{ flexGrow: "1" }}>

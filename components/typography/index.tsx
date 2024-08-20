@@ -1,7 +1,7 @@
 import React from "react";
 import MUITypography from "@mui/material/Typography";
 
-export interface ITypographyProps {
+export interface TypographyProps {
   children: React.ReactNode;
   variant?: 'body1' | 'body2' | 'button' | 'caption' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'inherit' | 'overline' | 'subtitle1' | 'subtitle2';
   gutterBottom?: boolean;
@@ -12,7 +12,7 @@ export interface ITypographyProps {
   lineHeight?: string
 }
 
-export const Typography = ({ children, variant, gutterBottom, fontWeight, fontSize, color, textAlign, lineHeight }: ITypographyProps) => {
+export const Typography = ({ children, variant, gutterBottom, fontWeight, fontSize, color, textAlign, lineHeight }: TypographyProps) => {
   return (
     <MUITypography
       variant={variant ? variant : "body1"}

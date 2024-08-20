@@ -2,7 +2,7 @@ import React from 'react';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
-export interface IBadgeProps {
+export interface BadgeProps {
   color?: 'info' | 'success' | 'warning' | 'error' | 'primary'
   variant?: 'outlined' | 'filled';
   size?: 'small' | 'medium'
@@ -14,7 +14,7 @@ export const Badge = ({
   variant = 'outlined',
   size = 'medium',
   label
-}: IBadgeProps) => {
+}: BadgeProps) => {
   return (
     <Stack direction="row" spacing={1}>
       <Chip label={label} variant={variant} size={size} color={color} />

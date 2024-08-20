@@ -5,20 +5,20 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
-export interface IRadioOption {
+export interface RadioOption {
   value: string;
   label: string;
   disabled?: boolean;
 }
 
-export interface IRadioGroupProps {
-  options: IRadioOption[];
+export interface RadioGroupProps {
+  options: RadioOption[];
   label: string;
   value: string;
   onChange: (val: string) => void;
 }
 
-export const RadioGroup = (props: IRadioGroupProps) => {
+export const RadioGroup = (props: RadioGroupProps) => {
 
   const [value, setValue] = useState<string>(props.value);
 
@@ -37,7 +37,7 @@ export const RadioGroup = (props: IRadioGroupProps) => {
         name="row-radio-buttons-group"
       >
         {
-          (props.options || []).map((option: IRadioOption) => (
+          (props.options || []).map((option: RadioOption) => (
             <FormControlLabel
               key={option.value}
               value={option.value}

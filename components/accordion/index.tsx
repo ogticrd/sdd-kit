@@ -5,17 +5,17 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export interface IAccordionChildren {
+export interface AccordionChildren {
   title: string;
   subtitle?: string;
   content: string | React.ReactNode;
 }
 
-export interface IAccordionProps {
-  elements: IAccordionChildren[];
+export interface AccordionProps {
+  elements: AccordionChildren[];
 }
 
-export const Accordion = ({ elements }: IAccordionProps) => {
+export const Accordion = ({ elements }: AccordionProps) => {
   const [expanded, setExpanded] = React.useState<string | false>(false);
 
   const handleChange =
@@ -25,7 +25,7 @@ export const Accordion = ({ elements }: IAccordionProps) => {
 
   return (
     <div>
-      {(elements || []).map((child: IAccordionChildren, index: number) => (
+      {(elements || []).map((child: AccordionChildren, index: number) => (
         <MUIAccordion key={index} expanded={expanded === 'panel' + index} onChange={handleChange('panel' + index)}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}

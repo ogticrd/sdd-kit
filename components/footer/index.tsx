@@ -8,11 +8,11 @@ import { GridContainer, GridItem } from "../grid";
 import { Typography } from "../typography";
 import { IconButton } from '../iconButton';
 
-export interface IFooterInternalProps {
+export interface FooterInternalProps {
   children: React.ReactNode;
 }
 
-export interface IFooterProps {
+export interface FooterProps {
   contact?: {
     phone?: string;
     fax?: string;
@@ -36,7 +36,7 @@ export interface IFooterProps {
   institutionFullName?: string;
 }
 
-export const FooterContent = ({ children }: IFooterInternalProps) => {
+export const FooterContent = ({ children }: FooterInternalProps) => {
   return (
     <div style={{ padding: "75px 25px", background: "#003876" }}>
       <div
@@ -53,7 +53,7 @@ export const FooterContent = ({ children }: IFooterInternalProps) => {
   )
 }
 
-export const FooterBottom = ({ children }: IFooterInternalProps) => {
+export const FooterBottom = ({ children }: FooterInternalProps) => {
   return (
     <div style={{ background: "white", padding: "12.5px 25px" }}>
       <div
@@ -70,7 +70,7 @@ export const FooterBottom = ({ children }: IFooterInternalProps) => {
   )
 }
 
-export const Footer = (props: IFooterProps) => {
+export const Footer = (props: FooterProps) => {
 
   return (
     <div>

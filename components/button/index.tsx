@@ -1,7 +1,7 @@
 import React from 'react'
 import MUIButton from '@mui/material/Button';
 
-export interface IButtonProps {
+export interface ButtonProps {
   disabled?: boolean;
   submit?: boolean;
   onClick?: () => void;
@@ -34,7 +34,7 @@ export const Button = ({
   endIcon = null,
   color,
   fontWeight
-}: IButtonProps) => {
+}: ButtonProps) => {
   return (
     <MUIButton
       size={size}

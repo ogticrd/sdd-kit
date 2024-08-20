@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from '@mui/material/Link'
 
-import { IMenuItem } from './'
+import { MenuItemProps } from './'
 
-export const HeaderMenu = ({ menuItems, isMenuOpen }: { menuItems: IMenuItem[], isMenuOpen: boolean }) => {
+export const HeaderMenu = ({ menuItems, isMenuOpen }: { menuItems: MenuItemProps[], isMenuOpen: boolean }) => {
 
     return (
         <div className='bg-white border-y border-y-gray-200 relative'>
